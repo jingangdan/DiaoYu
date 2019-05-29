@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--我的私信-->
+    <LinearLayout
+        android:id="@+id/mymsg_ll_myletter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x144"
+        android:background="@drawable/bg_white_bottom_line"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x24">
+
+        <ImageView
+            android:layout_width="@dimen/x82"
+            android:layout_height="@dimen/x82"
+            android:src="@mipmap/mine_message_01" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的私信"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_30px" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x8"
+                android:text="看看TA给你说了什么"
+                android:textColor="@color/c_999999"
+                android:textSize="@dimen/tv_28px" />
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/mymsg_iv_myletterred"
+            android:layout_width="@dimen/x14"
+            android:layout_height="@dimen/x14"
+            android:src="@drawable/red_point"
+            android:layout_marginLeft="@dimen/x24"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <!--发现周边钓友-->
+    <LinearLayout
+        android:id="@+id/mymsg_ll_nearby"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x144"
+        android:background="@drawable/bg_white_bottom_line"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x24">
+
+        <ImageView
+            android:layout_width="@dimen/x82"
+            android:layout_height="@dimen/x82"
+            android:src="@mipmap/mine_message_02" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发现周边钓友"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_30px" />
+
+        </LinearLayout>
+    </LinearLayout>
+    <!--回复-->
+    <LinearLayout
+        android:id="@+id/mymsg_ll_relpy"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x144"
+        android:background="@drawable/bg_white_bottom_line"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x24">
+
+        <ImageView
+            android:layout_width="@dimen/x82"
+            android:layout_height="@dimen/x82"
+            android:src="@mipmap/mine_message_03" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:text="回复"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_30px" />
+        <ImageView
+            android:id="@+id/mymsg_iv_relpyred"
+            android:layout_width="@dimen/x14"
+            android:layout_height="@dimen/x14"
+            android:src="@drawable/red_point"
+            android:layout_marginLeft="@dimen/x24"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <!--赞过我-->
+    <LinearLayout
+        android:id="@+id/mymsg_ll_likeme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x144"
+        android:background="@drawable/bg_white_bottom_line"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x24">
+
+        <ImageView
+            android:layout_width="@dimen/x82"
+            android:layout_height="@dimen/x82"
+            android:src="@mipmap/mine_message_04" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:text="赞过我"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_30px" />
+        <ImageView
+            android:id="@+id/mymsg_iv_likemered"
+            android:layout_width="@dimen/x14"
+            android:layout_height="@dimen/x14"
+            android:src="@drawable/red_point"
+            android:layout_marginLeft="@dimen/x24"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <!--打赏-->
+    <LinearLayout
+        android:id="@+id/mymsg_ll_reward"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x144"
+        android:background="@drawable/bg_white_bottom_line"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x24">
+
+        <ImageView
+            android:layout_width="@dimen/x82"
+            android:layout_height="@dimen/x82"
+            android:src="@mipmap/mine_message_05" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:text="打赏"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_30px" />
+        <ImageView
+            android:id="@+id/mymsg_iv_rewardred"
+            android:layout_width="@dimen/x14"
+            android:layout_height="@dimen/x14"
+            android:src="@drawable/red_point"
+            android:layout_marginLeft="@dimen/x24"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <!--系统消息-->
+    <LinearLayout
+        android:id="@+id/mymsg_ll_sysmsg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x144"
+        android:background="@drawable/bg_white_bottom_line"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x24">
+
+        <ImageView
+            android:layout_width="@dimen/x82"
+            android:layout_height="@dimen/x82"
+            android:src="@mipmap/mine_message_06" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:text="系统消息"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_30px" />
+        <ImageView
+            android:id="@+id/mymsg_iv_sysred"
+            android:layout_width="@dimen/x14"
+            android:layout_height="@dimen/x14"
+            android:src="@drawable/red_point"
+            android:layout_marginLeft="@dimen/x24"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</LinearLayout>

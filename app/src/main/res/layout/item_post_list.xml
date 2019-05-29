@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_forum_postlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/x24">
+
+        <ImageView
+            android:layout_width="@dimen/x240"
+            android:layout_height="@dimen/x180"
+            android:id="@+id/post_list_iv_pic"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:minHeight="@dimen/x180"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/post_list_tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text=""
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_30px" />
+
+            <TextView
+                android:id="@+id/post_list_tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/post_list_ll_info"
+                android:layout_below="@+id/post_list_tv_title"
+                android:layout_marginBottom="@dimen/x12"
+                android:layout_marginTop="@dimen/x4"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/c_999999"
+                android:textSize="@dimen/tv_28px" />
+
+            <LinearLayout
+                android:id="@+id/post_list_ll_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <!--标签-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/post_list_tv_label1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/x20"
+                        android:background="@drawable/bg_red_round"
+                        android:gravity="center"
+                        android:minHeight="@dimen/x32"
+                        android:minWidth="@dimen/x64"
+                        android:text="推荐"
+                        android:textColor="@color/c_f44e4e"
+                        android:textSize="@dimen/tv_24px"
+                        android:visibility="gone"
+                        app:layout_auto_basewidth="height" />
+
+                    <TextView
+                        android:id="@+id/post_list_tv_label2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/x20"
+                        android:background="@drawable/bg_orange_round"
+                        android:gravity="center"
+                        android:minHeight="@dimen/x32"
+                        android:minWidth="@dimen/x64"
+                        android:text="精品"
+                        android:textColor="@color/c_eb8542"
+                        android:textSize="@dimen/tv_24px"
+                        android:visibility="gone"
+                        app:layout_auto_basewidth="height" />
+                </LinearLayout>
+                <!--个人信息-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.8"
+                    android:gravity="center_vertical|right">
+
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/post_list_iv_head"
+                        android:layout_width="@dimen/x48"
+                        android:layout_height="@dimen/x48"
+                        android:layout_gravity="right"
+                        android:src="@mipmap/mine_edit_head"
+                        app:layout_auto_basewidth="height"
+                        app:siShape="@drawable/shape_circle"
+                        app:siSquare="true" />
+
+                    <TextView
+                        android:id="@+id/post_list_tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x16"
+                        android:singleLine="true"
+                        android:text=""
+                        android:textColor="@color/c_666666"
+                        android:textSize="@dimen/tv_26px" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_video_postlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!--<com.youku.cloud.player.YoukuPlayerView-->
+            <!--android:id="@+id/youkuplayerview_postlist"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+        <!--</com.youku.cloud.player.YoukuPlayerView>-->
+
+        <RelativeLayout
+            android:id="@+id/player_cover_postlist_rl"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="@dimen/x24">
+
+            <ImageView
+                android:id="@+id/player_cover_postlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <ImageView
+                android:id="@+id/player_icon_iv_postlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/player_icon" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/postlist_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/x24"
+            android:layout_weight="1"
+            android:text="标题标题标题"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+
+    </LinearLayout>
+
+    <TextView style="@style/line" />
+
+</LinearLayout>
+

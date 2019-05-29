@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="YoukuPlayerOpenSDK-release-">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/3244b44af214394379822c7c67d1ac0edb05fad2/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/3244b44af214394379822c7c67d1ac0edb05fad2/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/3244b44af214394379822c7c67d1ac0edb05fad2/output/jars/libs/YoukuPlayerOpenSDK.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

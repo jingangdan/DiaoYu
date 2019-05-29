@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/x24">
+
+            <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                android:id="@+id/item_fishing_friends_dp_head"
+                android:layout_width="@dimen/x64"
+                android:layout_height="@dimen/x64"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="right"
+                android:src="@mipmap/mine_edit_head"
+                app:layout_auto_basewidth="height"
+                app:siShape="@drawable/shape_circle"
+                app:siSquare="true" />
+
+            <RelativeLayout
+                android:id="@+id/item_fishing_friends_dp_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x24"
+                android:layout_toRightOf="@+id/item_fishing_friends_dp_head"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/item_fishing_friends_dp_ll_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/item_fishing_friends_dp_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/item_fishing_friends_dp_tv_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/c_333333"
+                                android:textSize="@dimen/tv_28px" />
+
+                            <LinearLayout
+                                android:id="@+id/item_dp_ll_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignRight="@+id/item_fishing_friends_comment_tv_name"
+                                android:orientation="horizontal"></LinearLayout>
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/item_fishing_friends_dp_tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/x8"
+                            android:textColor="@color/c_999999"
+                            android:textSize="@dimen/tv_28px" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/item_fishing_friends_dp_tv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/item_fishing_friends_comment_ll"
+                        android:layout_marginTop="@dimen/x24"
+                        android:textColor="@color/c_666666"
+                        android:textSize="@dimen/tv_28px" />
+
+                    <com.project.dyuapp.myviews.GridViewForScrollView
+                        android:id="@+id/item_fishing_friend_dp_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="4"
+                        android:scrollbars="none" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:layout_marginLeft="@dimen/x110"
+            android:background="@color/c_f0f0f0" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

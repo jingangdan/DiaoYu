@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_chager_name"-->
+    <!--android:layout_width="@dimen/x128"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@drawable/bg_gray_round_angle"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="@dimen/x12"-->
+    <!--android:text="免费"-->
+    <!--android:textSize="@dimen/tv_28px" />-->
+
+    <!--<CheckBox-->
+    <!--android:id="@+id/tv_chager_name"-->
+    <!--android:layout_width="@dimen/x128"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:button="@null"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="@dimen/x12"-->
+    <!--android:text="免费"-->
+    <!--android:textSize="@dimen/tv_28px" />-->
+
+    <RelativeLayout
+        android:id="@+id/item_charge_type_rl_cost2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_click_btn_gray">
+
+        <EditText
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/et_chager_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="自定义"
+            android:inputType="number"
+            android:minWidth="@dimen/x128"
+            android:padding="@dimen/x12"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/tv_28px" />
+    </RelativeLayout>
+
+</LinearLayout>

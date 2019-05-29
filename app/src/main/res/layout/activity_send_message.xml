@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.dyuapp.activity.SendMessageActivity">
+
+    <include
+        layout="@layout/layout_plv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/send_message_ll_bottom"
+        />
+
+    <LinearLayout
+        android:id="@+id/send_message_ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x24"
+        android:layout_alignParentBottom="true"
+        android:background="@color/c_ffffff"
+
+        android:gravity="center"
+        android:minHeight="@dimen/x96">
+
+        <EditText
+            android:id="@+id/send_message_edt_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/x16"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/x16"
+            android:layout_weight="1"
+            android:background="@drawable/bg_search_send_message"
+            android:hint="我来说一句"
+            android:padding="@dimen/x6"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/send_message_tv_send_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:background="@drawable/bg_blue_round_angle"
+            android:padding="@dimen/x16"
+            android:text="发送"
+            android:textColor="@color/c_ffffff" />
+    </LinearLayout>
+</RelativeLayout>

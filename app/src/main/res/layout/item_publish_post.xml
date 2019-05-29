@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/x24"
+    android:orientation="vertical">
+    <!--文字-->
+    <LinearLayout
+        android:id="@+id/item_publish_post_ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x24"
+        android:background="@color/c_ffffff"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/item_publish_post_edt_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="请输入内容"
+            android:gravity="top"
+            android:padding="@dimen/x24"
+            android:minLines="4"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="@dimen/tv_24px">
+
+            <TextView
+                android:id="@+id/item_publish_post_tv_del_content"
+                android:layout_width="@dimen/x88"
+                android:layout_height="@dimen/x48"
+                android:background="@drawable/bg_click_btn_red"
+                android:gravity="center"
+                android:text="删除"
+                android:textColor="@color/c_ffffff"
+                android:textSize="@dimen/tv_24px" />
+        </LinearLayout>
+    </LinearLayout>
+    <!--图-->
+    <FrameLayout
+        android:id="@+id/item_publish_post_fl_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/x300"
+        android:layout_marginBottom="@dimen/x24">
+
+        <ImageView
+            android:id="@+id/item_publish_post_iv_pic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/item_publish_post_tv_del_pic"
+            android:layout_width="@dimen/x88"
+            android:layout_height="@dimen/x48"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="@dimen/x24"
+            android:background="@drawable/bg_click_btn_red"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/c_ffffff"
+            android:textSize="@dimen/tv_24px" />
+    </FrameLayout>
+</LinearLayout>

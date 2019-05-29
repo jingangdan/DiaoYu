@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/my_comment_shop_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:divider="@null"
+        android:listSelector="@null"
+        android:scrollbars="none">
+
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+</LinearLayout>

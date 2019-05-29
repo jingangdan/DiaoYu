@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:zhy="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--标题-->
+    <include layout="@layout/layout_search_title" />
+    <!--热门搜索-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_ffffff"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/x24"
+        android:paddingLeft="@dimen/x24"
+        android:paddingRight="@dimen/x24"
+        android:paddingTop="@dimen/x48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="热门搜索"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_28px" />
+
+        <com.zhy.view.flowlayout.TagFlowLayout
+            android:id="@+id/search_flowlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            zhy:max_select="-1"></com.zhy.view.flowlayout.TagFlowLayout>
+    </LinearLayout>
+
+    <!--搜索历史-->
+    <LinearLayout
+        android:id="@+id/search_ll_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x24"
+        android:background="@color/c_ffffff"
+        android:orientation="vertical"
+        android:padding="@dimen/x24"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜索历史"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_28px" />
+
+            <TextView
+                android:id="@+id/search_tv_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="清空所有"
+                android:textColor="@color/c_999999"
+                android:textSize="@dimen/tv_28px" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/search_lv_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x44"
+            android:divider="@color/c_ffffff"
+            android:dividerHeight="@dimen/x44"
+            android:scrollbars="none"></ListView>
+    </LinearLayout>
+</LinearLayout>

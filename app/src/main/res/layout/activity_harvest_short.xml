@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_harvest_short"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.dyuapp.activity.HarvestShortActivity">
+
+    <ListView
+        android:id="@+id/harvest_short_lv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:divider="@color/c_f9f9f9"
+        android:visibility="gone"
+        android:dividerHeight="@dimen/x28"
+        ></ListView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:id="@+id/harvest_short_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_x="1px"
+            android:layout_y="1px"
+            />
+    </ScrollView>
+
+</RelativeLayout>

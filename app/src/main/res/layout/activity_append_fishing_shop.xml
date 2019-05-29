@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical"
+    tools:context="com.project.dyuapp.activity.AppendFishingShopActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_f9f9f9"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/c_f9f9f9"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/x500">
+
+                <LinearLayout
+                    android:id="@+id/fishing_shop_ll_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x500"
+                    android:background="@color/c_e0f3ff"
+                    android:gravity="center"
+                    android:minHeight="@dimen/x500"
+                    android:orientation="vertical">
+
+                    <com.project.dyuapp.myviews.RoundRectImageView
+                        android:layout_width="@dimen/x168"
+                        android:layout_height="@dimen/x168"
+                        android:src="@mipmap/issue_icon_img" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/x24"
+                        android:text="上传图片"
+                        android:textColor="@color/c_666666"
+                        android:textSize="@dimen/tv_32px" />
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/fishing_shop_img_select"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x500"
+                    android:maxHeight="@dimen/x500"
+                    android:scaleType="fitXY" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:gravity="center"
+                android:minHeight="@dimen/x96"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="店铺名称"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_32px" />
+
+                <EditText
+                    android:id="@+id/fishing_shop_edt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:background="@color/c_ffffff"
+                    android:hint="请输入店铺名称"
+                    android:maxLength="20"
+                    android:textColor="@color/c_333333"
+                    android:textColorHint="@color/c_999999"
+                    android:textSize="@dimen/tv_32px" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:gravity="center"
+                android:minHeight="@dimen/x96"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="店铺位置"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_32px" />
+
+                <LinearLayout
+                    android:id="@+id/fishing_shop_ll_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/fishing_shop_tv_position"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x24"
+                        android:layout_weight="1"
+                        android:background="@color/c_ffffff"
+                        android:hint="请选择位置"
+                        android:textColor="@color/c_333333"
+                        android:textColorHint="@color/c_999999"
+                        android:textSize="@dimen/tv_32px" />
+
+                    <TextView
+                        android:id="@+id/fishing_shop_tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x24"
+                        android:background="@color/c_ffffff"
+                        android:drawableRight="@mipmap/city_location"
+                        android:textColor="@color/c_333333"
+                        android:textColorHint="@color/c_999999"
+                        android:textSize="@dimen/tv_32px" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:gravity="center"
+                android:minHeight="@dimen/x96"
+                android:padding="@dimen/x24">
+
+                <EditText
+                    android:id="@+id/fishing_shop_edt_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/c_ffffff"
+                    android:hint="请输入详细地址"
+                    android:textColor="@color/c_333333"
+                    android:textColorHint="@color/c_999999"
+                    android:textSize="@dimen/tv_32px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x24"
+                android:background="@color/c_ffffff"
+                android:gravity="center|left"
+                android:minHeight="@dimen/x96"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择身份"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_32px" />
+
+                <CheckBox
+                    android:id="@+id/fishing_shop_tv_boss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:background="@color/c_ffffff"
+                    android:button="@null"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/check_button_select"
+                    android:drawablePadding="@dimen/x12"
+                    android:text="渔具店老板"
+                    android:textColor="@drawable/check_text_select"
+                    android:textColorHint="@color/c_999999"
+                    android:textSize="@dimen/tv_32px" />
+
+                <CheckBox
+                    android:id="@+id/fishing_shop_tv_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x48"
+                    android:background="@color/c_ffffff"
+                    android:button="@null"
+                    android:checked="false"
+                    android:drawableLeft="@drawable/check_button_select"
+                    android:drawablePadding="@dimen/x12"
+                    android:text="钓鱼人"
+                    android:textColor="@drawable/check_text_select"
+                    android:textColorHint="@color/c_999999"
+                    android:textSize="@dimen/tv_32px" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:gravity="center"
+                android:minHeight="@dimen/x96"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="店主电话"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_32px" />
+
+                <EditText
+                    android:id="@+id/fishing_shop_edt_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:background="@color/c_ffffff"
+                    android:hint="请输入店主电话"
+                    android:inputType="phone"
+                    android:textColor="@color/c_333333"
+                    android:textColorHint="@color/c_999999"
+                    android:textSize="@dimen/tv_32px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x24"
+                android:layout_marginTop="@dimen/x24"
+                android:background="@color/c_ffffff"
+                android:minHeight="@dimen/x96"
+                android:orientation="vertical"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/c_ffffff"
+                    android:gravity="top|left"
+                    android:text="简介"
+                    android:textColor="@color/c_333333"
+                    android:textColorHint="@color/c_999999"
+                    android:textSize="@dimen/tv_32px" />
+
+                <EditText
+                    android:id="@+id/fishing_shop_edt_brief_introduction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/c_ffffff"
+                    android:gravity="top|left"
+                    android:maxLength="200"
+                    android:minLines="4"
+                    android:padding="@dimen/x5"
+                    android:textColor="@color/c_333333"
+                    android:textColorHint="@color/c_999999"
+                    android:textSize="@dimen/tv_32px" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

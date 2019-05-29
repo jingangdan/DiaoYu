@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x24"
+        android:layout_marginRight="@dimen/x24"
+        android:background="@drawable/bg_gray_round"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/x56"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/x56"
+            android:background="@drawable/bg_white_line_gray1"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x96"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="数量"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px"/>
+                
+                <LinearLayout
+                    android:layout_width="@dimen/x225"
+                    android:layout_height="@dimen/x65"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/bg_gray_line_black">
+
+                    <TextView
+                        android:id="@+id/dialog_exchange_tv_subtract"
+                        android:layout_width="@dimen/x65"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="―"
+                        android:textColor="@color/c_333333"
+                        android:textSize="@dimen/tv_28px"/>
+
+                    <TextView
+                        android:layout_width="@dimen/x1"
+                        android:layout_height="match_parent"
+                        android:background="@color/c_333333"/>
+
+                    <TextView
+                        android:id="@+id/dialog_exchange_tv_count"
+                        android:layout_width="@dimen/x90"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/c_333333"
+                        android:textSize="@dimen/tv_28px"/>
+
+                    <TextView
+                        android:layout_width="@dimen/x1"
+                        android:layout_height="match_parent"
+                        android:background="@color/c_333333"/>
+
+                    <TextView
+                        android:id="@+id/dialog_exchange_tv_plus"
+                        android:layout_width="@dimen/x65"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="＋"
+                        android:textColor="@color/c_333333"
+                        android:textSize="@dimen/tv_28px"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x160"
+                android:padding="@dimen/x24"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="留言"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px"/>
+
+                <EditText
+                    android:id="@+id/dialog_exchange_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/c_fdfdfe"
+                    android:hint="输入留言"
+                    android:gravity="top"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:textColorHint="@color/c_cccccc"
+                    android:textSize="@dimen/tv_28px"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:background="@color/c_f0f0f0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x96"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dialog_exchange_tv_cancel"
+                android:layout_width="@dimen/x0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_28px" />
+
+            <TextView
+                android:layout_width="@dimen/x1"
+                android:layout_height="match_parent"
+                android:background="@color/c_f0f0f0" />
+
+            <TextView
+                android:id="@+id/dialog_exchange_tv_confirm"
+                android:layout_width="@dimen/x0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="确认"
+                android:textColor="@color/c_269ceb"
+                android:textSize="@dimen/tv_28px" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

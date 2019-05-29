@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_ffffff"
+        android:padding="@dimen/x24"
+        android:orientation="horizontal">
+
+        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+            android:id="@+id/item_city_diaoyou_psiv"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100"
+            app:siShape="@drawable/shape_circle"
+            android:src="@mipmap/mine_edit_head"
+            app:siSquare="true"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x20">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/item_city_diaoyou_iv"
+                android:layout_marginRight="@dimen/x20"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/item_city_diaoyou_tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/c_333333"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:maxLength="25"
+                        android:ellipsize="end"
+                        android:textSize="@dimen/tv_30px" />
+
+                    <TextView
+                        android:id="@+id/item_city_diaoyou_tv_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x20"
+                        android:background="@drawable/bg_orange_round_angle"
+                        android:padding="@dimen/x4"
+                        android:text="Lv."
+                        android:textColor="@color/c_ffffff"
+                        android:textSize="@dimen/tv_24px" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x20"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/item_city_diaoyou_tv_site"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@mipmap/friend_list_site"
+                        android:drawablePadding="@dimen/x8"
+                        android:text=""
+                        android:textColor="@color/c_999999"
+                        android:textSize="@dimen/tv_24px" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="km"
+                        android:textColor="@color/c_999999"
+                        android:textSize="@dimen/tv_24px" />
+
+                    <TextView
+                        android:id="@+id/item_city_diaoyou_tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x24"
+                        android:text=""
+                        android:textColor="@color/c_999999"
+                        android:textSize="@dimen/tv_24px" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_city_diaoyou_iv"
+                android:focusable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/button_cancel" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

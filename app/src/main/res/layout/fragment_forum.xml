@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <include layout="@layout/view_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/c_ffffff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/forum_ll_catch"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x144"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/forum_icon_01" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_weight="1"
+                    android:text="渔获战报"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_30px" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:id="@+id/forum_ll_ask"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x144"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/forum_icon_02" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_weight="1"
+                    android:text="问答"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_30px" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:id="@+id/forum_ll_diy"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x144"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/forum_icon_03" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_weight="1"
+                    android:text="渔具DIY"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_30px" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:id="@+id/forum_ll_fishing"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x144"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/forum_icon_04" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_weight="1"
+                    android:text="路亚海钓"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_30px" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:id="@+id/forum_ll_bait"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x144"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/forum_icon_05" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_weight="1"
+                    android:text="鱼饵配方"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_30px" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:id="@+id/forum_ll_skill"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x144"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/forum_icon_06" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_weight="1"
+                    android:text="技巧"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_30px" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:id="@+id/forum_ll_talk"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x144"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x45"
+                android:paddingRight="@dimen/x24">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/forum_icon_07" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_weight="1"
+                    android:text="杂谈"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_30px" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

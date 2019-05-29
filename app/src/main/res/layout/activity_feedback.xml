@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical"
+    tools:context="com.project.dyuapp.activity.FeedbackActivity">
+
+    <EditText
+        android:id="@+id/feedback_edt_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x400"
+        android:background="@color/c_ffffff"
+        android:gravity="top"
+        android:hint="请把您的意见告诉我们，我们努力做的更好"
+        android:paddingBottom="@dimen/x20"
+        android:paddingLeft="@dimen/x24"
+        android:paddingRight="@dimen/x24"
+        android:paddingTop="@dimen/x20"
+        android:textColor="@color/c_333333"
+        android:textColorHint="@color/c_cccccc"
+        android:textSize="@dimen/tv_28px" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96"
+        android:layout_marginTop="@dimen/x24"
+        android:background="@color/c_ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/x24"
+        android:paddingRight="@dimen/x24">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系方式"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_28px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(选填)"
+            android:textColor="@color/c_999999"
+            android:textSize="@dimen/tv_28px" />
+
+        <EditText
+            android:id="@+id/feedback_edt_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@color/c_ffffff"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:numeric="integer"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_28px" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/feedback_tv_submit"
+        style="@style/btn_blue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96"
+        android:layout_marginLeft="@dimen/x24"
+        android:layout_marginRight="@dimen/x24"
+        android:layout_marginTop="@dimen/x100"
+        android:text="提交" />
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CheckBox
+        android:id="@+id/item_charge_type_chb_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x12"
+        android:layout_marginTop="@dimen/x24"
+        android:background="@drawable/bg_charge_type_cost"
+        android:button="@null"
+        android:gravity="center"
+        android:minWidth="@dimen/x128"
+        android:padding="@dimen/x12"
+        android:text="免费"
+        android:textColor="@drawable/text_charge_type_cost"
+        android:textSize="@dimen/tv_28px" />
+
+    <RelativeLayout
+        android:id="@+id/item_charge_type_rl_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x12"
+        android:layout_marginTop="@dimen/x24"
+        android:background="@drawable/bg_click_btn_gray"
+        >
+        <EditText
+            android:id="@+id/item_charge_type_edt_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/x12"
+            android:hint="自定义"
+            android:inputType="number"
+            android:minWidth="@dimen/x128"
+            android:textSize="@dimen/tv_28px"
+            android:textCursorDrawable="@null"
+            android:background="@null"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="102dp" />
+    </RelativeLayout>
+</LinearLayout>
+

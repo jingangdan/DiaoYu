@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/x24"
+    android:paddingRight="@dimen/x24"
+    android:paddingTop="@dimen/x40"
+    tools:context="com.project.dyuapp.activity.RegisterActivity">
+
+    <include layout="@layout/layout_phone_code_psw" />
+
+    <RelativeLayout
+        android:id="@+id/register_rl_sel_address"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96"
+        android:layout_marginTop="@dimen/x20">
+
+        <ImageView
+            android:id="@+id/register_iv_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/x24"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:src="@mipmap/sign_site" />
+
+        <TextView
+            android:id="@+id/register_tv_sel_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/register_iv_more"
+            android:layout_toRightOf="@+id/register_iv_password"
+            android:hint="选择地址"
+            android:paddingBottom="@dimen/x24"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/register_iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:padding="@dimen/x24"
+            android:src="@mipmap/more_right" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/c_888888" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:padding="@dimen/x24">
+
+        <LinearLayout
+            android:id="@+id/register_ll_agree"
+            android:layout_width="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/register_iv_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/sign_selected" />
+
+            <TextView
+                android:id="@+id/register_tv_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x24"
+                android:text="我已阅读并同意"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_28px" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/register_tv_agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:text="《钓鱼吧服务协议条款》"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/tv_28px" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/register_tv_register"
+        style="@style/btn_blue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x88"
+        android:layout_marginTop="@dimen/x50"
+        android:text="注册" />
+
+</LinearLayout>

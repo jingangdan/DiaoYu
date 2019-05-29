@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--<ScrollView-->
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/skill_details_sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/skill_datails_line"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/c_ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/skill_detail_tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:paddingBottom="@dimen/x48"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24"
+                android:paddingTop="@dimen/x48"
+                android:text=""
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_38px" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24">
+
+                <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                    android:id="@+id/skill_detail_iv_head"
+                    android:layout_width="@dimen/x82"
+                    android:layout_height="@dimen/x82"
+                    android:src="@mipmap/mine_edit_head"
+                    app:layout_auto_basewidth="height"
+                    app:siShape="@drawable/shape_circle"
+                    app:siSquare="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/skill_detail_tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/x24"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:maxWidth="@dimen/x300"
+                        android:text=""
+                        android:textColor="@color/c_333333"
+                        android:textSize="@dimen/tv_28px" />
+
+                    <TextView
+                        android:id="@+id/skill_detail_tv_grade"
+                        style="@style/grade"
+                        android:layout_marginLeft="@dimen/x24"
+                        android:text="Lv."
+                        app:layout_auto_basewidth="height" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/skill_detail_iv_attend"
+                    android:layout_width="@dimen/x90"
+                    android:layout_height="@dimen/x50"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:src="@mipmap/button_attention"
+                    app:layout_auto_basewidth="height" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/skill_detail_tv_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:padding="@dimen/x24"
+                android:text="发布于年月日 · 评论 · 点赞 · 打赏"
+                android:textColor="@color/c_999999"
+                android:textSize="@dimen/tv_24px" />
+
+            <LinearLayout
+                android:id="@+id/skill_details_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x24"
+                android:background="@drawable/bg_shape_corner"
+                android:orientation="vertical"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:id="@+id/skill_details_tv_get_bait"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x12"
+                    android:text="饵料:"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/x32" />
+
+                <TextView
+                    android:id="@+id/skill_details_tv_get_seed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x12"
+                    android:text="鱼种 :"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/x32" />
+
+                <TextView
+                    android:id="@+id/skill_details_tv_get_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x12"
+                    android:text="钓场类型:"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/x32" />
+
+                <TextView
+                    android:id="@+id/skill_details_tv_get_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="出钓时间: "
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/x32" />
+
+            </LinearLayout>
+
+            <!--  <com.project.dyuapp.myviews.ListViewForScrollView
+                  android:id="@+id/skill_detail_lv"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="@dimen/x24"
+                  android:layout_marginRight="@dimen/x24"
+                  android:divider="@color/c_ffffff"
+                  android:dividerHeight="@dimen/x32"
+                  android:scrollbars="none"></com.project.dyuapp.myviews.ListViewForScrollView>-->
+            <LinearLayout
+                android:id="@+id/skill_detail_ll_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x24"
+                android:layout_marginRight="@dimen/x24"
+                android:divider="@color/c_ffffff"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x1"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginRight="@dimen/x24"
+                    android:background="@color/c_f0f0f0" />
+
+                <TextView
+                    android:id="@+id/skill_detail_tv_support"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/x32"
+                    android:layout_marginTop="@dimen/x32"
+                    android:background="@drawable/bg_red_round1"
+                    android:paddingBottom="@dimen/x12"
+                    android:paddingLeft="@dimen/x48"
+                    android:paddingRight="@dimen/x48"
+                    android:paddingTop="@dimen/x12"
+                    android:text="赞赏支持"
+                    android:textColor="@color/c_e64969"
+                    android:textSize="@dimen/tv_28px" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x24"
+                android:background="@color/c_f9f9f9" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x24"
+                android:background="@color/c_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/x32"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="打赏"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:id="@+id/skill_detail_rl_dashang"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_dashang1"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:src="@mipmap/mine_edit_head"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_dashang2"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:layout_marginLeft="@dimen/x40"
+                            android:src="@color/colorPrimary"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_dashang3"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:layout_marginLeft="@dimen/x80"
+                            android:src="@color/c_333333"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_dashang4"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:layout_marginLeft="@dimen/x120"
+                            android:src="@mipmap/mine_edit_head"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_dashang5"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:layout_marginLeft="@dimen/x160"
+                            android:src="@mipmap/mine_edit_head"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/skill_detail_tv_no_dashang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="暂无"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x16"
+                    android:src="@mipmap/more_right" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x24"
+                android:background="@color/c_f9f9f9" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x24"
+                android:background="@color/c_ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/x32"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点赞"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:id="@+id/skill_detail_rl_dianzan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_civ1"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:src="@mipmap/mine_edit_head"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_civ2"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:layout_marginLeft="@dimen/x40"
+                            android:src="@color/colorPrimary"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_civ3"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:layout_marginLeft="@dimen/x80"
+                            android:src="@color/c_333333"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_civ4"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:layout_marginLeft="@dimen/x120"
+                            android:src="@mipmap/mine_edit_head"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+
+
+                        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                            android:id="@+id/skill_detail_civ5"
+                            android:layout_width="@dimen/x70"
+                            android:layout_height="@dimen/x70"
+                            android:layout_marginLeft="@dimen/x160"
+                            android:src="@mipmap/mine_edit_head"
+                            android:visibility="gone"
+                            app:layout_auto_basewidth="height"
+                            app:siShape="@drawable/shape_circle"
+                            app:siSquare="true" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/skill_detail_tv_no_zan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="暂无"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x16"
+                    android:src="@mipmap/more_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x24"
+                android:background="@color/c_f9f9f9" />
+
+            <RelativeLayout
+                android:id="@+id/skill_detail_rl_allcomment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x98">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:text="评论"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px" />
+
+                <TextView
+                    android:id="@+id/skill_detail_tv_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x24"
+                    android:drawablePadding="@dimen/x16"
+                    android:drawableRight="@mipmap/more_right"
+                    android:text="查看全部"
+                    android:textColor="@color/c_666666" />
+            </RelativeLayout>
+
+            <com.project.dyuapp.myviews.ListViewForScrollView
+                android:id="@+id/skill_detail_lvfsv_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:scrollbars="none" />
+
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+    <View
+        android:id="@+id/skill_datails_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_above="@+id/skill_datails_eview_box"
+        android:background="@color/c_f9f9f9" />
+
+    <LinearLayout
+        android:id="@+id/skill_datails_eview_box"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x98"
+        android:layout_alignParentBottom="true"
+        android:background="@color/c_ffffff">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingLeft="@dimen/x24"
+            android:paddingRight="@dimen/x24">
+
+            <EditText
+                android:id="@+id/skill_details_edt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/x16"
+                android:layout_marginTop="@dimen/x16"
+                android:background="@drawable/bg_hollow_edt"
+                android:hint="写下你的评论..."
+                android:imeOptions="actionSend"
+                android:paddingLeft="@dimen/x16"
+                android:paddingRight="@dimen/x16"
+                android:singleLine="true"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/tv_30px" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/x0"
+            android:layout_height="match_parent"
+            android:layout_weight="3.5"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/skill_detail_ll_right"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/skill_detail_fabulous_rl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/skill_detail_fabulous_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:src="@mipmap/tab_praise_unselected" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/skill_detail_collection_rl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/skill_detail_collection_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/tab_collect_unselected" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/skill_detail_tv_send"
+                android:layout_width="@dimen/x200"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/x16"
+                android:layout_marginTop="@dimen/x16"
+                android:background="@drawable/bg_blue_round_angle"
+                android:gravity="center"
+                android:text="发送"
+                android:textColor="@color/c_ffffff"
+                android:textSize="@dimen/tv_32px"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>
+

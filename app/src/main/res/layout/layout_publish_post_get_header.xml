@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--标题-->
+    <include layout="@layout/layout_input_title" />
+    <!--出钓时间-->
+    <RelativeLayout
+        android:id="@+id/publish_get_rl_sel_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/publish_get_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="出钓时间"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/publish_get_tv_time_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_toLeftOf="@+id/publish_get_iv_more"
+            android:layout_toRightOf="@+id/publish_get_tv_time"
+            android:hint="请选择出钓时间"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/publish_get_iv_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/more_right" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/c_f0f0f0" />
+    <!--钓场类型 -->
+    <!--“钓场类型”删除-->
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/publish_get_rl_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/publish_get_tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="钓场类型"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/publish_get_tv_type_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/publish_get_tv_type_more"
+            android:layout_toRightOf="@+id/publish_get_tv_type"
+            android:hint="请选择钓场类型"
+            android:layout_marginRight="@dimen/x24"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/publish_get_tv_type_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/more_right" />
+    </RelativeLayout>
+
+    <TextView style="@style/line" />
+    <!--钓场名称-->
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/publish_get_rl_name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="@dimen/x24"-->
+        <!--android:background="@android:color/white">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/publish_get_tv_name"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="@dimen/x24"-->
+            <!--android:text="钓场名称"-->
+            <!--android:textColor="@color/c_666666"-->
+            <!--android:textSize="@dimen/tv_32px" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/publish_get_tv_name_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_toLeftOf="@+id/publish_get_tv_name_more"-->
+            <!--android:layout_toRightOf="@+id/publish_get_tv_name"-->
+            <!--android:hint="请选择钓场"-->
+            <!--android:layout_marginRight="@dimen/x24"-->
+            <!--android:textColor="@color/c_333333"-->
+            <!--android:textColorHint="@color/c_cccccc"-->
+            <!--android:textSize="@dimen/tv_32px" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/publish_get_tv_name_more"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:src="@mipmap/more_right" />-->
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/publish_get_rl_name"
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24">
+
+        <TextView
+            android:id="@+id/publish_get_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="钓场名称"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <EditText
+            android:layout_toRightOf="@+id/publish_get_tv_name"
+            android:id="@+id/publish_get_edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="请输入钓场"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+    </RelativeLayout>
+
+    <TextView style="@style/line" />
+    <!--饵料-->
+    <RelativeLayout
+        android:id="@+id/publish_get_rl_bait"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/publish_get_tv_bait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="饵料"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/publish_get_tv_bait_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/publish_get_tv_bait_more"
+            android:layout_toRightOf="@+id/publish_get_tv_bait"
+            android:hint="请选择饵料"
+            android:layout_marginRight="@dimen/x24"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/publish_get_tv_bait_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/more_right" />
+    </RelativeLayout>
+
+    <TextView style="@style/line" />
+    <!--鱼种-->
+    <RelativeLayout
+        android:id="@+id/publish_get_rl_fish_seed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/publish_get_tv_fish_seed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="鱼种"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/publish_get_tv_fish_seed_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_toLeftOf="@+id/publish_get_tv_fish_seed_more"
+            android:layout_toRightOf="@+id/publish_get_tv_fish_seed"
+            android:hint="请选择鱼种"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/publish_get_tv_fish_seed_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/more_right" />
+    </RelativeLayout>
+
+    <TextView style="@style/line" />
+    <!--钓法-->
+    <RelativeLayout
+        android:id="@+id/publish_get_rl_fishing_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/publish_get_tv_fishing_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="钓法"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/publish_get_tv_fishing_method_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/publish_get_tv_fishing_method_more"
+            android:layout_toRightOf="@+id/publish_get_tv_fishing_method"
+            android:hint="请选择钓法"
+            android:layout_marginRight="@dimen/x24"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/publish_get_tv_fishing_method_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/more_right" />
+    </RelativeLayout>
+
+    <TextView style="@style/line" />
+    <!--线组-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24">
+
+        <TextView
+            android:id="@+id/publish_get_tv_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="线组"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <EditText
+            android:id="@+id/publish_get_edt_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="请输入线组，如1.2主线"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+    </LinearLayout>
+
+    <TextView style="@style/line" />
+    <!--钓竿长度-->
+    <RelativeLayout
+        android:id="@+id/publish_get_rl_lengh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/publish_get_tv_lengh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="钓竿长度"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/publish_get_tv_lengh_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/publish_get_iv_lengh_more"
+            android:layout_toRightOf="@+id/publish_get_tv_lengh"
+            android:hint="请选择钓竿长度"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/publish_get_iv_lengh_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/x24"
+            android:src="@mipmap/more_right" />
+    </RelativeLayout>
+
+    <TextView style="@style/line" />
+    <!--钓竿品牌-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@android:color/white"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x24"
+        android:layout_marginBottom="@dimen/x24">
+
+        <TextView
+            android:id="@+id/publish_get_tv_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text="钓竿品牌"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <EditText
+            android:id="@+id/publish_get_edt_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="请输入钓竿品牌"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+    </LinearLayout>
+</LinearLayout>

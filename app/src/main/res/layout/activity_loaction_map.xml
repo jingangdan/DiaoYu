@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.dyuapp.activity.LocationMapActivity">
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/location_map_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.baidu.mapapi.map.MapView>
+
+
+        <TextView
+            android:id="@+id/location_map_tv_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/x24"
+            android:background="@drawable/bg_blue_round_angle"
+            android:padding="@dimen/x24"
+            android:text="正在定位中......"
+            android:textColor="@color/c_ffffff" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:src="@mipmap/map_dian_selected" />
+    </FrameLayout>
+
+
+</LinearLayout>

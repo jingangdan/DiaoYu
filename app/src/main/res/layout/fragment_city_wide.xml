@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_title" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/city_wide_psv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ptr:ptrMode="both">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.project.dyuapp.myviews.GridViewForScrollView
+                android:id="@+id/city_wide_ngv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/x12"
+                android:horizontalSpacing="@dimen/x12"
+                android:numColumns="2"
+                android:scrollbars="none"
+                android:verticalSpacing="@dimen/x12" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:padding="@dimen/x24"
+                android:text="同城动态"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_32px"
+                android:textStyle="bold" />
+
+            <TextView style="@style/line" />
+
+            <com.project.dyuapp.myviews.ListViewForScrollView
+                android:id="@+id/city_wide_nlv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:scrollbars="none" />
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+</LinearLayout>

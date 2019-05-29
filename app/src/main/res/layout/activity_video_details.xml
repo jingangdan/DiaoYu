@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical"
+    tools:context="com.project.dyuapp.activity.VideoDetailsActivity">
+    <!--
+        <FrameLayout
+            android:id="@+id/video_details_fl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">-->
+
+    <FrameLayout
+        android:id="@+id/video_details_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <com.youku.cloud.player.YoukuPlayerView
+            android:id="@+id/video_details_ypv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:visibility="gone"></com.youku.cloud.player.YoukuPlayerView>
+
+
+        <RelativeLayout
+            android:id="@+id/video_details_player_cover_rl"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true">
+
+            <ImageView
+                android:id="@+id/video_details_iv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/video_details_player_icon_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/player_icon" />
+
+            <ImageView
+                android:id="@+id/video_details_player_iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="@dimen/x24"
+                android:src="@mipmap/nav_back" />
+        </RelativeLayout>
+    </FrameLayout>
+
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/video_details_prsv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/video_details_ll_bottom"
+        android:layout_below="@+id/video_details_ll"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/x24">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/video_details_tv_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textColor="@color/c_333333"
+                        android:textSize="@dimen/tv_32px"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x24"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/video_details_tv_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textColor="@color/c_999999"
+                        android:textSize="@dimen/tv_28px" />
+
+
+                    <ImageView
+                        android:id="@+id/video_details_img_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/video_share" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/line"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:gravity="center"
+                android:minLines="3"
+                android:orientation="horizontal"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left|top"
+                    android:text="简介："
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px" />
+
+                <TextView
+                    android:id="@+id/video_details_tv_brief_introduction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:minLines="3"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x24"
+                android:background="@color/c_ffffff"
+                android:gravity="center"
+                android:minHeight="@dimen/x96"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="相关视频"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff">
+
+                <com.project.dyuapp.myviews.ListViewForScrollView
+                    android:id="@+id/video_details_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/c_ffffff"
+                    android:divider="@null"
+                    android:scrollbars="none"></com.project.dyuapp.myviews.ListViewForScrollView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x24"
+                android:background="@color/c_ffffff"
+                android:gravity="center|left"
+                android:minHeight="@dimen/x96"
+                android:padding="@dimen/x24"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="点赞"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/video_detail_rl_dianzan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_weight="1">
+
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/video_detail_civ1"
+                        android:layout_width="@dimen/x70"
+                        android:layout_height="@dimen/x70"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/mine_edit_head"
+                        android:visibility="gone"
+                        app:layout_auto_basewidth="height"
+                        app:siBorderColor="@color/c_ffffff"
+                        app:siBorderWidth="1dp"
+                        app:siShape="@drawable/shape_circle"
+                        app:siSquare="true" />
+
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/video_detail_civ2"
+                        android:layout_width="@dimen/x70"
+                        android:layout_height="@dimen/x70"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/x40"
+                        android:src="@mipmap/mine_edit_head"
+                        android:visibility="gone"
+                        app:layout_auto_basewidth="height"
+                        app:siBorderColor="@color/c_ffffff"
+                        app:siBorderWidth="1dp"
+                        app:siShape="@drawable/shape_circle"
+                        app:siSquare="true" />
+
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/video_detail_civ3"
+                        android:layout_width="@dimen/x70"
+                        android:layout_height="@dimen/x70"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/x80"
+                        android:src="@mipmap/mine_edit_head"
+                        android:visibility="gone"
+                        app:layout_auto_basewidth="height"
+                        app:siBorderColor="@color/c_ffffff"
+                        app:siBorderWidth="1dp"
+                        app:siShape="@drawable/shape_circle"
+                        app:siSquare="true" />
+
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/video_detail_civ4"
+                        android:layout_width="@dimen/x70"
+                        android:layout_height="@dimen/x70"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/x120"
+                        android:src="@mipmap/mine_edit_head"
+                        android:visibility="gone"
+                        app:layout_auto_basewidth="height"
+                        app:siBorderColor="@color/c_ffffff"
+                        app:siBorderWidth="1dp"
+                        app:siShape="@drawable/shape_circle"
+                        app:siSquare="true" />
+
+                    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                        android:id="@+id/video_detail_civ5"
+                        android:layout_width="@dimen/x70"
+                        android:layout_height="@dimen/x70"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/x160"
+                        android:src="@mipmap/mine_edit_head"
+                        android:visibility="gone"
+                        app:layout_auto_basewidth="height"
+                        app:siBorderColor="@color/c_ffffff"
+                        app:siBorderWidth="1dp"
+                        app:siShape="@drawable/shape_circle"
+                        app:siSquare="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/video_detail_tv_no_zan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="暂无"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x16"
+                    android:src="@mipmap/more_right" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/video_detail_rl_allcomment"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x98"
+                android:layout_marginTop="@dimen/x24"
+                android:background="@color/c_ffffff">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:text="评论"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/video_detail_tv_all"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x24"
+                    android:drawablePadding="@dimen/x16"
+                    android:drawableRight="@mipmap/more_right"
+                    android:text="查看全部"
+                    android:textColor="@color/c_666666" />
+            </RelativeLayout>
+
+            <com.project.dyuapp.myviews.ListViewForScrollView
+                android:id="@+id/video_detail_lvfsv_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/c_ffffff"
+                android:divider="@null"
+                android:scrollbars="none"></com.project.dyuapp.myviews.ListViewForScrollView>
+
+
+        </LinearLayout>
+
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+
+    <TextView
+        style="@style/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1" />
+
+    <LinearLayout
+        android:id="@+id/video_details_ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x130"
+        android:layout_alignParentBottom="true"
+        android:background="@color/c_ffffff"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/x16"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/x16"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/video_details_edt_input_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_hollow_edt"
+                android:hint="写下你的评论..."
+                android:imeOptions="actionSend"
+                android:padding="@dimen/x10"
+                android:singleLine="true"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/tv_30px" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3">
+
+
+            <RelativeLayout
+                android:id="@+id/video_detail_send_rl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@color/c_269ceb"
+                android:padding="@dimen/x24"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/video_detail_tv_send_rl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:src="@mipmap/tab_praise_unselected"
+                    android:text="发送"
+                    android:textColor="@color/c_ffffff" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/video_detail_fabulous_rl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="@dimen/x12">
+
+
+                <TextView
+                    android:id="@+id/video_detail_content_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/x24"
+                    android:layout_toLeftOf="@+id/video_detail_fabulous_tv"
+                    android:drawablePadding="@dimen/x5"
+                    android:drawableTop="@mipmap/yule_pl"
+                    android:padding="@dimen/x10"
+                    android:layout_marginTop="@dimen/x12"
+                    android:textSize="@dimen/tv_28px"
+                    android:text="50" />
+
+                <TextView
+                    android:id="@+id/video_detail_fabulous_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/x24"
+                    android:drawablePadding="@dimen/x5"
+                    android:drawableTop="@mipmap/yule_dz_unselected"
+                    android:padding="@dimen/x10"
+                    android:layout_marginTop="@dimen/x12"
+                    android:textSize="@dimen/tv_28px"
+                    android:text="50" />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

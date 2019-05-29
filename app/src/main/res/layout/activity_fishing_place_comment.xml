@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical"
+    tools:context="com.project.dyuapp.activity.ReviewActivity">
+
+    <ListView
+        android:id="@+id/comment_fishing_place_lv_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/publish_post_ll_bottom"
+        android:layout_alignParentTop="true"
+        android:divider="@null"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/comment_tv_public"
+        style="@style/btn_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/x10"
+        android:minHeight="@dimen/x88"
+        android:text="发布" />
+
+
+</RelativeLayout>

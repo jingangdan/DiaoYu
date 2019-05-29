@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_ffffff"
+    android:orientation="vertical">
+    <!--标题-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="@dimen/x24"
+        android:paddingTop="@dimen/x24"
+        android:paddingBottom="@dimen/x8"
+        android:paddingLeft="@dimen/x24">
+
+        <TextView
+            android:id="@+id/item_drafts_tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x24"
+            android:text=""
+            android:textStyle="bold"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/item_drafts_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+    </LinearLayout>
+    <!--内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/x24">
+
+        <ImageView
+            android:id="@+id/item_drafts_iv_pic"
+            android:layout_width="@dimen/x240"
+            android:layout_height="@dimen/x180"
+            android:layout_marginRight="@dimen/x24"
+            android:src="@mipmap/mine_img" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x180"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_drafts_tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text=""
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/tv_28px" />
+
+            <TextView
+                android:id="@+id/item_drafts_tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text=""
+                android:textColor="@color/c_999999"
+                android:textSize="@dimen/tv_26px" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <TextView style="@style/line" />
+    <!--按钮-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96">
+
+        <TextView
+            android:id="@+id/item_drafts_tv_del"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:layout_width="@dimen/x1"
+            android:layout_height="@dimen/x66"
+            android:layout_gravity="center_vertical"
+            android:background="@color/c_f0f0f0" />
+
+        <TextView
+            android:id="@+id/item_drafts_tv_repeat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="重发"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:layout_width="@dimen/x1"
+            android:layout_height="@dimen/x66"
+            android:layout_gravity="center_vertical"
+            android:background="@color/c_f0f0f0" />
+
+        <TextView
+            android:id="@+id/item_drafts_tv_change"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="修改"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/tv_32px" />
+    </LinearLayout>
+    <TextView style="@style/line_wide" />
+</LinearLayout>

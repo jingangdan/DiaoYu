@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#F5F5F5" />
+
+    <!-- 边缘线条颜色 -->
+    <stroke
+        android:width="0dp"
+        android:color="#F5F5F5" />
+    <!-- 圆角的幅度 -->
+    <corners
+        android:bottomLeftRadius="25dip"
+        android:bottomRightRadius="25dip"
+        android:topLeftRadius="25dip"
+        android:topRightRadius="25dip" />
+
+</shape>

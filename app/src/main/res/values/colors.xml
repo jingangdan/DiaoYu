@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#269ceb</color>
+    <color name="colorPrimaryDark">#269ceb</color>
+    <color name="colorAccent">#269ceb</color>
+
+    <color name="c_269ceb">#269ceb</color><!--主题色-->
+    <color name="c_04b4f8">#04b4f8</color>
+    <color name="c_999999">#999999</color>
+    <color name="c_333333">#333333</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_ffffff">#ffffff</color>
+    <color name="c_f1f1f1">#f1f1f1</color>
+    <color name="c_f9f9f9">#f9f9f9</color><!--背景色-->
+    <color name="c_cccccc">#cccccc</color><!--默认输入字体色-->
+    <color name="c_e64969">#e64969</color>
+    <color name="c_f092a6">#f092a6</color>
+    <color name="c_e0f3ff">#e0f3ff</color>
+    <color name="c_f44e4e">#f44e4e</color><!--红色-->
+    <color name="c_eb8542">#eb8542</color><!--橘色-->
+    <color name="c_ea8442">#ea8442</color>
+    <color name="c_bbd9f6">#bbd9f6</color>
+    <color name="c_888888">#888888</color>
+    <color name="c_f0f0f0">#f0f0f0</color><!--分隔线颜色-->
+    <color name="c_00000000">#00000000</color><!--透明色-->
+    <color name="c_fdfdfe">#fdfdfe</color><!--透明色-->
+    <color name="c_a7d6f6">#a7d6f6</color>
+</resources>

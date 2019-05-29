@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.dyuapp.activity.PublishGetActivity">
+       <ListView
+        android:id="@+id/publish_get_lv_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/publish_post_ll_bottom"
+        android:layout_alignParentTop="true"
+        android:divider="@null"
+        android:scrollbars="none" />
+   <!-- <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/publish_post_ll_bottom">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <include layout="@layout/layout_publish_post_get_header"/>
+
+    <LinearLayout
+        android:id="@+id/publish_get_ll_add"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+    <include layout="@layout/layout_publish_post_footer"/>
+</LinearLayout>
+    </ScrollView>-->
+    <!--底部-->
+    <include layout="@layout/layout_publish_bottom" />
+</RelativeLayout>

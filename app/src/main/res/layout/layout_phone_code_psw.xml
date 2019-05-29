@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96"
+        android:gravity="bottom">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/x24"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:src="@mipmap/sign_phone" />
+
+        <EditText
+            android:id="@+id/edt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:paddingBottom="@dimen/x24"
+            android:singleLine="true"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/c_888888" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96"
+        android:layout_marginTop="@dimen/x20">
+
+        <ImageView
+            android:id="@+id/iv_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/x24"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:src="@mipmap/sign_verify" />
+
+        <EditText
+            android:id="@+id/edt_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/tv_get_code"
+            android:layout_toRightOf="@+id/iv_code"
+            android:background="@android:color/transparent"
+            android:hint="验证码"
+            android:paddingBottom="@dimen/x24"
+            android:singleLine="true"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/tv_get_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:padding="@dimen/x24"
+            android:text="获取验证码"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/tv_28px" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/c_888888" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96"
+        android:layout_marginTop="@dimen/x20">
+
+        <ImageView
+            android:id="@+id/iv_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/x24"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:src="@mipmap/sign_password" />
+
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/iv_password_show"
+            android:layout_toRightOf="@+id/iv_password"
+            android:background="@android:color/transparent"
+            android:hint="设置密码"
+            android:inputType="textPassword"
+            android:paddingBottom="@dimen/x24"
+            android:singleLine="true"
+            android:textColor="@color/c_333333"
+            android:textColorHint="@color/c_cccccc"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/iv_password_show"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:padding="@dimen/x24"
+            android:src="@mipmap/sign_show_not" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/c_888888" />
+</LinearLayout>

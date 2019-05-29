@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEfAfAfA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/publish_ll_bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x32"
+            android:paddingRight="@dimen/x32">
+
+            <LinearLayout
+                android:id="@+id/publish_ll_yuleduanpian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_02" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="投稿视频"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/publish_ll_shaiyuju"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_07" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="晒渔具"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/publish_ll_fayuhuo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_12" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="发渔获"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x72"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/publish_ll_zatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_03" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="钓鱼杂谈"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/publish_ll_jiqiao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_01" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="投稿技巧"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/publish_ll_erliao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_06" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="投稿饵料"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/publish_ll_luya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_05" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="路亚海钓"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x72"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/publish_ll_add_tool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/x48"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_08" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="添加渔具店"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/publish_ll_add_zone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x48"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@mipmap/home_icon_11" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x6"
+                    android:text="添加钓场"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_26px" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/publish_ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x98"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/x72"
+        android:background="@color/c_ffffff"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/publish_iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="@dimen/x10"
+            android:paddingTop="@dimen/x10"
+            android:src="@mipmap/tab_close" />
+    </LinearLayout>
+
+</RelativeLayout>

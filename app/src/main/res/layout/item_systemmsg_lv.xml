@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/c_ffffff"
+    android:padding="@dimen/x24">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/mine_message_06icon"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/x24">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="系统消息"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_32px"/>
+            <TextView
+                android:id="@+id/sysmsg_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/tv_26px"
+                android:textColor="@color/c_999999"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/sysmsg_tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/c_999999"
+            android:textSize="@dimen/tv_28px"
+            android:layout_marginTop="@dimen/x16"/>
+    </LinearLayout>
+</LinearLayout>

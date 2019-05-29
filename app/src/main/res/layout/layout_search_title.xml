@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search_rl_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_269ceb">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x60"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_toLeftOf="@+id/search_tv_cancle"
+            android:background="@drawable/bg_white_round_angle"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/search_tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/x24"
+                android:drawablePadding="@dimen/x8"
+                android:drawableRight="@mipmap/more_triangle_down"
+                android:gravity="center_vertical"
+                android:text="钓场"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_28px" />
+
+            <EditText
+                android:id="@+id/search_et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/c_ffffff"
+                android:paddingLeft="@dimen/x16"
+                android:singleLine="true"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_26px"
+                android:hint="渔具店、钓场、关键字"
+                app:layout_auto_basewidth="height" />
+
+            <ImageView
+                android:id="@+id/search_iv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x24"
+                android:layout_marginRight="@dimen/x24"
+                android:src="@mipmap/home_nav_search" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/search_tv_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x88"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/back_click_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x24"
+            android:paddingRight="@dimen/x24"
+            android:text="取消"
+            android:textColor="@color/c_ffffff"
+            android:textSize="@dimen/tv_36px"
+            app:layout_auto_basewidth="height" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/c_ffffff"
+    android:padding="@dimen/x24">
+    <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+        android:id="@+id/nearbyfd_iv_head"
+        android:layout_width="@dimen/x96"
+        android:layout_height="@dimen/x96"
+        android:src="@mipmap/mine_edit_head"
+        app:siShape="@drawable/shape_circle"
+        app:siSquare="true"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toLeftOf="@+id/nearbyfd_iv_state"
+        android:layout_toRightOf="@+id/nearbyfd_iv_head"
+        android:layout_marginLeft="@dimen/x24"
+        android:layout_marginRight="@dimen/x24">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/nearbyfd_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/tv_32px"
+                android:textColor="@color/c_333333"/>
+            <TextView
+                android:id="@+id/nearbyfd_tv_levle"
+                style="@style/grade"
+                android:text="Lv.0"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/x24"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/x16">
+            <TextView
+                android:id="@+id/nearbyfd_tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/tv_28px"
+                android:textColor="@color/c_999999"
+                android:drawableLeft="@mipmap/friend_list_site"
+                android:drawablePadding="@dimen/x4"/>
+            <TextView
+                android:id="@+id/nearbyfd_tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/c_999999"
+                android:textSize="@dimen/tv_28px"
+                android:layout_marginLeft="@dimen/x16"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/nearbyfd_iv_state"
+        android:layout_width="@dimen/x90"
+        android:layout_height="@dimen/x50"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/button_attention"
+        android:layout_centerVertical="true"/>
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/x24"
+    android:layout_marginTop="@dimen/x24"
+    android:background="@color/c_ffffff"
+    android:minHeight="@dimen/x96"
+    android:paddingLeft="@dimen/tv_24px"
+    android:paddingRight="@dimen/tv_24px"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <!--  <TextView
+        android:layout_gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/tv_24px"
+        android:text="请输入标题"
+        android:paddingTop="@dimen/x24"
+        android:textColor="@color/c_666666"
+        android:textSize="@dimen/tv_32px" />-->
+
+    <EditText
+        android:id="@+id/publish_post_head_edt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:hint="请输入标题(建议15字左右)"
+        android:paddingBottom="@dimen/x24"
+        android:paddingTop="@dimen/x24"
+        android:textColor="@color/c_333333"
+        android:textColorHint="@color/c_cccccc"
+        android:textSize="@dimen/tv_32px" />
+</LinearLayout>

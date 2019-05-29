@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_ffffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/item_skilldetails_comment_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x112">
+
+                <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                    android:id="@+id/item_skill_detail_iv_head"
+                    android:layout_width="@dimen/x64"
+                    android:layout_height="@dimen/x64"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/mine_edit_head"
+                    app:layout_auto_basewidth="height"
+                    app:siShape="@drawable/shape_circle"
+                    app:siSquare="true" />
+
+                <TextView
+                    android:id="@+id/item_skill_detail_tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_toRightOf="@+id/item_skill_detail_iv_head"
+                    android:text="冬钓"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_32px" />
+
+                <TextView
+                    android:id="@+id/item_skill_detail_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="111111111111"
+                    android:textColor="@color/c_999999"
+                    android:textSize="@dimen/tv_28px" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/item_skill_detail_tv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x24"
+                android:layout_marginLeft="@dimen/x88"
+                android:text=""
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/tv_32px" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:layout_marginLeft="@dimen/x112"
+            android:background="@color/c_f0f0f0" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

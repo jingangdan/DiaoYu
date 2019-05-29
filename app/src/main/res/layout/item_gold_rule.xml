@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96"
+        android:background="@color/c_ffffff"
+        android:paddingLeft="@dimen/x24"
+        android:paddingRight="@dimen/x24">
+
+        <TextView
+            android:id="@+id/item_rule_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="精华帖"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_28px"/>
+
+        <TextView
+            android:id="@+id/item_rule_tv_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="每篇"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_28px"/>
+
+        <TextView
+            android:id="@+id/item_rule_tv_rule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="+100"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_28px"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

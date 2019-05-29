@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/c_f9f9f9"
+    tools:context="com.project.dyuapp.activity.DianzanPeopleActivity">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/dianzan_people_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/c_f0f0f0"
+        android:dividerHeight="@dimen/x1"
+        android:background="@color/c_f9f9f9"
+        android:scrollbars="none">
+
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+</LinearLayout>

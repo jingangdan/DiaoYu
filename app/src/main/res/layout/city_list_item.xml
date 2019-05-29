@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/locate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="@dimen/x15">
+
+    <TextView
+        android:id="@+id/locateHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="当前定位城市"
+        android:textColor="@color/c_666666"
+        android:textSize="12sp" />
+
+    <TextView
+        android:padding="@dimen/x15"
+        android:background="@drawable/kuang_choose_white"
+        android:id="@+id/lng_city"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locateHint"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/x15"
+        android:clickable="true"
+        android:focusable="false"
+        android:gravity="center"
+        android:text="武汉"
+        android:textColor="@color/c_333333"
+        android:textSize="14sp" />
+
+    <ProgressBar
+        android:padding="@dimen/x15"
+        android:id="@+id/pbLocate"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/locateHint"
+        android:layout_marginRight="64dip"
+        android:layout_marginTop="@dimen/x15" />
+
+</RelativeLayout>

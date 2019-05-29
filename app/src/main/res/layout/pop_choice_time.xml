@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_f0f0f0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/time_selector"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_36px" />
+
+        <TextView
+            android:id="@+id/pop_choice_time_tv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/x24"
+            android:text="@string/complete"
+            android:textColor="@color/c_269ceb"
+            android:textSize="@dimen/tv_36px" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x32"
+        android:layout_marginLeft="@dimen/x36"
+        android:layout_marginRight="@dimen/x36"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.project.dyuapp.myviews.CycleWheelView
+            android:id="@+id/pop_choice_time_cwv_year"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        </com.project.dyuapp.myviews.CycleWheelView>
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="年"
+            android:visibility="gone"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+
+        <com.project.dyuapp.myviews.CycleWheelView
+            android:id="@+id/pop_choice_time_cwv_month"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        </com.project.dyuapp.myviews.CycleWheelView>
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="月"
+            android:visibility="gone"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+
+        <com.project.dyuapp.myviews.CycleWheelView
+            android:id="@+id/pop_choice_time_cwv_day"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+        </com.project.dyuapp.myviews.CycleWheelView>
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="日"
+            android:visibility="gone"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+
+        <com.project.dyuapp.myviews.CycleWheelView
+            android:id="@+id/pop_choice_time_cwv_hour"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+        </com.project.dyuapp.myviews.CycleWheelView>
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="时"
+            android:visibility="gone"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+
+        <com.project.dyuapp.myviews.CycleWheelView
+            android:id="@+id/pop_choice_time_cwv_minute"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+        </com.project.dyuapp.myviews.CycleWheelView>
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="分"
+            android:visibility="gone"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+
+        <com.project.dyuapp.myviews.CycleWheelView
+            android:id="@+id/pop_choice_time_cwv_second"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_weight="1">
+
+        </com.project.dyuapp.myviews.CycleWheelView>
+
+        <TextView
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="秒"
+            android:visibility="gone"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical"
+    tools:context="com.project.dyuapp.activity.ReviewActivity">
+
+
+    <EditText
+        android:id="@+id/review_edt_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_ffffff"
+        android:gravity="top"
+        android:hint="输入评价"
+        android:maxLength="200"
+        android:minLines="8"
+        android:padding="@dimen/x24"
+        android:textColorHint="@color/c_999999"
+        android:textSize="@dimen/tv_32px" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x24"
+        android:background="@color/c_ffffff"
+        android:minHeight="@dimen/x98"
+        android:padding="@dimen/x24">
+
+        <TextView
+            android:id="@+id/review_tv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="星级评价"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_32px" />
+
+        <com.project.dyuapp.myviews.StarBarTouch
+            android:id="@+id/review_star_bar_touch_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            app:starCount="5"
+            app:starDistance="@dimen/x24"
+            app:starEmpty="@mipmap/list_star_unselected"
+            app:starFill="@mipmap/list_star_selected"
+            app:starSize="@dimen/x35" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/review_tv_public"
+        style="@style/btn_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x24"
+        android:layout_marginRight="@dimen/x24"
+        android:layout_marginTop="@dimen/x160"
+        android:minHeight="@dimen/x88"
+        android:text="发布" />
+
+
+</LinearLayout>

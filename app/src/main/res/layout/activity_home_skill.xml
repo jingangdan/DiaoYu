@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.dyuapp.activity.HomeSkillActivity">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/home_skill_psv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ptr:ptrMode="both">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--轮播图-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x375"
+                android:background="@color/c_e64969"
+                android:minHeight="@dimen/x20">
+
+                <com.project.dyuapp.myviews.Banner
+                    android:id="@+id/home_skill_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/banner_img" />
+                <!--搜索-->
+                <LinearLayout
+                    android:id="@+id/home_skill_ll_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x66"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginRight="@dimen/x24"
+                    android:layout_marginTop="@dimen/x16"
+                    android:background="@drawable/bg_search"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@mipmap/home_nav_search"
+                        android:drawablePadding="@dimen/x16"
+                        android:text="搜你喜欢"
+                        android:textColor="@color/c_999999"
+                        android:textSize="@dimen/tv_28px" />
+                </LinearLayout>
+            </FrameLayout>
+            <!--tablayout-->
+            <RelativeLayout
+                android:id="@+id/home_skill_rl_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x88"
+                android:background="@color/c_ffffff"
+                android:orientation="horizontal">
+
+                <com.androidkun.xtablayout.XTabLayout
+                    android:id="@+id/home_skill_xTablayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/home_skill_tv_line"
+                    app:xTabDisplayNum="4"
+                    app:xTabIndicatorColor="@color/colorPrimary"
+                    app:xTabIndicatorHeight="@dimen/x6"
+                    app:xTabIndicatorWidth="@dimen/x40"
+                    app:xTabMode="scrollable"
+                    app:xTabSelectedTextColor="@color/colorPrimary"
+                    app:xTabSelectedTextSize="@dimen/tv_28px"
+                    app:xTabTextColor="@color/c_333333"
+                    app:xTabTextSize="@dimen/tv_28px" />
+
+                <TextView
+                    android:id="@+id/home_skill_tv_line"
+                    android:layout_width="@dimen/x1"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/home_skill_iv_more"
+                    android:background="@color/c_cccccc" />
+
+                <ImageView
+                    android:id="@+id/home_skill_iv_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="@dimen/x32"
+                    android:paddingRight="@dimen/x32"
+                    android:src="@mipmap/more_down" />
+            </RelativeLayout>
+
+            <TextView style="@style/line_wide" />
+
+            <com.project.dyuapp.myviews.CustomViewPager
+                android:id="@+id/home_skill_vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+    <RelativeLayout
+        android:visibility="invisible"
+        android:id="@+id/home_skill_rl_tab_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x88"
+        android:background="@color/c_ffffff"
+        android:orientation="horizontal">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/home_skill_xTablayout_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/home_skill_tv_line_top"
+            app:xTabDisplayNum="4"
+            app:xTabIndicatorColor="@color/colorPrimary"
+            app:xTabIndicatorHeight="@dimen/x6"
+            app:xTabIndicatorWidth="@dimen/x40"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="@color/colorPrimary"
+            app:xTabSelectedTextSize="@dimen/tv_28px"
+            app:xTabTextColor="@color/c_333333"
+            app:xTabTextSize="@dimen/tv_28px" />
+
+        <TextView
+            android:id="@+id/home_skill_tv_line_top"
+            android:layout_width="@dimen/x1"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/home_skill_iv_more_top"
+            android:background="@color/c_cccccc" />
+
+        <ImageView
+            android:id="@+id/home_skill_iv_more_top"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:paddingLeft="@dimen/x32"
+            android:paddingRight="@dimen/x32"
+            android:src="@mipmap/more_down" />
+    </RelativeLayout>
+</FrameLayout>

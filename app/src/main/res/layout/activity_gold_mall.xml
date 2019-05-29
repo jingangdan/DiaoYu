@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.handmark.pulltorefresh.library.PullToRefreshScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gold_mall_sv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context="com.project.dyuapp.activity.GoldMallActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x280"
+            android:background="@color/c_269ceb"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x45"
+                android:layout_marginTop="@dimen/x45"
+                android:text="我的金币："
+                android:textColor="@color/c_ffffff"
+                android:textSize="@dimen/tv_28px" />
+
+            <TextView
+                android:id="@+id/gold_mall_tv_gold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/x40"
+                android:text=""
+                android:textColor="@color/c_ffffff"
+                android:textSize="@dimen/tv_80px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x129"
+            android:background="@color/c_ffffff"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/gold_mall_ll_record"
+                android:layout_width="@dimen/x0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/mine_gold_jilu"
+                    android:drawablePadding="@dimen/x24"
+                    android:gravity="center"
+                    android:text="兑换记录" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/x1"
+                android:layout_height="@dimen/x68"
+                android:layout_gravity="center"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:id="@+id/gold_mall_ll_task"
+                android:layout_width="@dimen/x0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/mine_gold_renwu"
+                    android:drawablePadding="@dimen/x24"
+                    android:gravity="center"
+                    android:text="金币任务" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x68"
+            android:layout_marginTop="@dimen/x24"
+            android:background="@color/c_ffffff"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x24"
+            android:text="金币兑换"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_28px" />
+
+        <com.project.dyuapp.myviews.GridViewForScrollView
+            android:id="@+id/gold_mall_gv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="@dimen/x14"
+            android:verticalSpacing="@dimen/x14"
+            android:padding="@dimen/x14"
+            android:background="@color/c_f9f9f9"
+            android:scrollbars="none"
+            android:numColumns="2">
+
+        </com.project.dyuapp.myviews.GridViewForScrollView>
+
+    </LinearLayout>
+
+</com.handmark.pulltorefresh.library.PullToRefreshScrollView>

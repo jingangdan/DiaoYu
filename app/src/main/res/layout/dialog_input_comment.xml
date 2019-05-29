@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x24"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/dialog_edt_comment_content"
+            android:theme="@style/MyEditText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x98"
+            android:layout_weight="1"
+            android:hint="写下你的评论..."
+            android:padding="@dimen/x24"
+            android:textColorHint="@color/c_999999"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/dialog_tv_comment_send"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/x98"
+            android:layout_marginLeft="@dimen/x24"
+            android:background="@color/c_269ceb"
+            android:gravity="center"
+            android:text="发送"
+            android:textColor="@color/c_ffffff"
+            android:textSize="@dimen/tv_32px" />
+    </LinearLayout>
+
+
+</LinearLayout>

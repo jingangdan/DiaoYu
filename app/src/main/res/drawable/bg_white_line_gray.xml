@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- 连框颜色值 -->
+    <item>
+        <shape>
+            <solid android:color="@color/c_f0f0f0" />
+        </shape>
+    </item>
+    <!-- 主体背景颜色值 -->
+    <!--设置只有顶部没有边框-->
+    <item
+        android:bottom="@dimen/x1"
+        android:left="@dimen/x1"
+        android:right="@dimen/x1">
+        <shape>
+            <solid android:color="@color/c_ffffff" />
+        </shape>
+    </item>
+
+</layer-list>

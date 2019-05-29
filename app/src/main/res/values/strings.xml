@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">钓鱼吧</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <!--粉色字体-->
+    <string name="city_wide_friend_num">共有<font color='#f092a6'>%1$s</font>位钓友</string>
+    <string name="city_wide_weather">%1$s%2$s<font color='#f092a6'>%3$s</font></string>
+    <string name="city_wide_fish_place">发现钓场<font color='#f092a6'>%1$s</font>个</string>
+    <string name="city_wide_shop">渔具店<font color='#f092a6'>%1$s</font>个</string>
+    <string name="grade">Lv.%1$s</string>
+
+
+    <!--地址选择器-->
+    <string name="address_selector">选择地区</string>
+    <string name="complete">完成</string>
+
+    <!--时间选择器-->
+    <string name="time_selector">选择时间</string>
+
+    <!--提示语-->
+    <string name="list_bottom">已经到底了~</string>
+    <string name="list_no_data">还没有数据哦~</string>
+    <string name="data_parsing_failed">数据解析失败~</string>
+    <string name="content_success">添加成功</string>
+    <string name="register_success">注册成功</string>
+    <string name="login_success">登录成功</string>
+</resources>

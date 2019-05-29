@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_home_gv1_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/mine_img" />
+
+    <LinearLayout
+        android:id="@+id/item_home_gv1_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/x2"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/item_home_gv1_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="渔获"
+            android:textColor="@color/c_ffffff"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/item_home_gv1_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#最新渔获#"
+            android:textColor="@color/c_ffffff"
+            android:textSize="@dimen/tv_24px" />
+    </LinearLayout>
+</RelativeLayout>

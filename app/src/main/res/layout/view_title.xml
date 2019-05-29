@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewtitle_rl"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_269ceb">
+
+    <!--返回-->
+    <ImageButton
+        android:id="@+id/title_ibtn_back"
+        android:layout_width="@dimen/x88"
+        android:layout_height="@dimen/x88"
+        android:layout_gravity="center"
+        android:background="@drawable/back_click_bg"
+        android:src="@mipmap/nav_back"
+        android:visibility="gone"
+        app:layout_auto_basewidth="height" />
+    <!--标题-->
+    <TextView
+        android:id="@+id/title_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x88"
+        android:layout_centerHorizontal="true"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxWidth="@dimen/x500"
+        android:singleLine="true"
+        android:textColor="@color/c_ffffff"
+        android:textSize="@dimen/tv_36px"
+        android:visibility="gone"
+        app:layout_auto_basewidth="height" />
+
+    <EditText
+        android:id="@+id/title_et_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x60"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x24"
+        android:layout_toLeftOf="@+id/title_tv_right"
+        android:background="@drawable/bg_white_round_angle"
+        android:drawableLeft="@mipmap/home_nav_search"
+        android:drawablePadding="@dimen/x22"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x24"
+        android:paddingRight="@dimen/x24"
+        android:singleLine="true"
+        android:textColor="@color/c_ffffff"
+        android:textColorHint="@color/c_ffffff"
+        android:textSize="@dimen/tv_24px"
+        android:visibility="gone"
+        app:layout_auto_basewidth="height" />
+
+    <TextView
+        android:id="@+id/title_tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x88"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/back_click_bg"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x24"
+        android:paddingRight="@dimen/x24"
+        android:textColor="@color/c_ffffff"
+        android:textSize="@dimen/tv_36px"
+        android:visibility="gone"
+        app:layout_auto_basewidth="height" />
+
+    <!--分享按钮-->
+    <ImageButton
+        android:id="@+id/title_ibtn_right"
+        android:layout_width="@dimen/x88"
+        android:layout_height="@dimen/x88"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/back_click_bg"
+        android:src="@mipmap/nav_share"
+        android:visibility="gone"
+        app:layout_auto_basewidth="height" />
+
+</RelativeLayout>

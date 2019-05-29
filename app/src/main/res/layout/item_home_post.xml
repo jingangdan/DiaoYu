@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/c_ffffff"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="@dimen/x24">
+
+    <ImageView
+        android:layout_width="@dimen/x242"
+        android:layout_height="@dimen/x182"
+        android:scaleType="fitXY"
+        android:src="@mipmap/mine_img" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x24"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_home_post_tv_tv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x4"
+            android:ellipsize="end"
+            android:lineSpacingMultiplier="1.2"
+            android:maxLines="2"
+            android:text=""
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_26px" />
+
+        <TextView
+            android:id="@+id/item_home_post_tv_tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x2"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/c_999999"
+            android:textSize="@dimen/tv_24px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x10"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/item_home_post_tv_tv3"
+                    android:layout_width="@dimen/x66"
+                    android:layout_height="@dimen/x34"
+                    android:background="@drawable/bg_red_round"
+                    android:gravity="center"
+                    android:text="推荐"
+                    android:visibility="gone"
+                    android:textColor="@color/c_f44e4e"
+                    android:textSize="@dimen/tv_22px"
+                    app:layout_auto_basewidth="height" />
+
+                <TextView
+                    android:id="@+id/item_home_post_tv_tv4"
+                    android:layout_width="@dimen/x66"
+                    android:layout_height="@dimen/x34"
+                    android:layout_marginLeft="@dimen/x20"
+                    android:layout_marginRight="@dimen/x20"
+                    android:background="@drawable/bg_orange_round"
+                    android:gravity="center"
+                    android:text="精品"
+                    android:visibility="gone"
+                    android:textColor="@color/c_eb8542"
+                    android:textSize="@dimen/tv_22px"
+                    app:layout_auto_basewidth="height" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:gravity="center_vertical|right">
+
+                <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+                    android:layout_width="@dimen/x50"
+                    android:layout_height="@dimen/x50"
+                    android:layout_gravity="right"
+                    android:src="@mipmap/mine_edit_head"
+                    app:layout_auto_basewidth="height"
+                    app:siShape="@drawable/shape_circle"
+                    app:siSquare="true" />
+
+                <TextView
+                    android:id="@+id/item_home_post_tv_tv5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/tv_24px" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

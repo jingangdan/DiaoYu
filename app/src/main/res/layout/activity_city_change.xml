@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lin_city_change"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_ffffff"
+        android:padding="@dimen/x15">
+
+        <EditText
+            android:id="@+id/et_city_change"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/x70"
+            android:background="@drawable/kuang_choose_gary"
+            android:gravity="center"
+            android:hint="输入城市名或拼音查询"
+            android:textColor="#515151"
+            android:textSize="12sp"></EditText>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lin_city_change"
+        android:cacheColorHint="#00000000"
+        android:divider="#00000000"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent"
+        android:paddingRight="25dip"
+        android:scrollbars="none" />
+
+    <ListView
+        android:id="@+id/search_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/lin_city_change"
+        android:cacheColorHint="#00000000"
+        android:divider="#00000000"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_noresult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lin_city_change"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="抱歉,暂时没有找到相关城市"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <com.project.dyuapp.citychange.MyLetterListView
+        android:id="@+id/MyLetterListView01"
+        android:layout_width="25dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/lin_city_change"
+        android:background="@color/c_ffffff" />
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--标题-->
+    <include layout="@layout/layout_input_title"/>
+    <!--分类-->
+    <RelativeLayout
+        android:id="@+id/publish_post_head_rl_sel_classify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/x24"
+        android:background="@color/c_ffffff"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/x96"
+        android:paddingLeft="@dimen/tv_24px"
+        android:paddingRight="@dimen/tv_24px">
+
+        <TextView
+            android:id="@+id/publish_post_head_tv_classify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/tv_24px"
+            android:text="饵料分类"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/publish_post_head_tv_classify_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/tv_24px"
+            android:layout_toLeftOf="@+id/publish_post_iv_classify_more"
+            android:layout_toRightOf="@+id/publish_post_head_tv_classify"
+            android:textColor="@color/c_666666"
+            android:textSize="@dimen/tv_32px" />
+
+        <ImageView
+            android:id="@+id/publish_post_iv_classify_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/more_right" />
+    </RelativeLayout>
+</LinearLayout>

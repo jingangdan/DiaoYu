@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/locate"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/locateHint"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:background="@drawable/kuang_choose_white"
+        android:clickable="true"
+        android:focusable="false"
+        android:gravity="center"
+        android:padding="@dimen/x15"
+        android:text="武汉"
+        android:textColor="@color/c_333333"
+        android:textSize="14sp" />
+
+</RelativeLayout>

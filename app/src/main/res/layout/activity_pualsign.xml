@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context="com.project.dyuapp.activity.PualsignActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/c_269ceb"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x48"
+                android:layout_marginTop="@dimen/x48"
+                android:orientation="horizontal">
+
+                <!--<com.github.siyamed.shapeimageview.CircularImageView
+                    android:id="@+id/pualsign_civ_img"
+                    android:layout_width="@dimen/x128"
+                    android:layout_height="@dimen/x128"
+                    android:src="@mipmap/home_img_01"
+                    app:siBorderColor="@color/c_ffffff"
+                    app:siBorderWidth="@dimen/x6" />-->
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/pualsign_civ_img"
+                    android:layout_width="@dimen/x128"
+                    android:layout_height="@dimen/x128"
+                    android:src="@mipmap/mine_edit_head"
+                    app:civ_border_color="@color/c_ffffff"
+                    app:civ_border_width="@dimen/x4" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/pualsign_tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/c_ffffff"
+                            android:textSize="@dimen/tv_32px" />
+
+                        <TextView
+                            android:id="@+id/pualsign_tv_grade"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/x20"
+                            android:background="@drawable/bg_orange_round_angle"
+                            android:padding="@dimen/x4"
+                            android:text="Lv."
+                            android:textColor="@color/c_ffffff"
+                            android:textSize="@dimen/tv_24px" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x20"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="金币:"
+                            android:textColor="@color/c_ffffff"
+                            android:textSize="@dimen/tv_24px" />
+
+                        <TextView
+                            android:id="@+id/pualsign_tv_gold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/x8"
+                            android:text=""
+                            android:textColor="@color/c_ffffff"
+                            android:textSize="@dimen/tv_24px" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/x24"
+                            android:text="积分:"
+                            android:textColor="@color/c_ffffff"
+                            android:textSize="@dimen/tv_24px" />
+
+                        <TextView
+                            android:id="@+id/pualsign_tv_integral"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/x8"
+                            android:text=""
+                            android:textColor="@color/c_ffffff"
+                            android:textSize="@dimen/tv_24px" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x24"
+                android:layout_marginLeft="@dimen/x200"
+                android:layout_marginRight="@dimen/x48"
+                android:layout_marginTop="@dimen/x24"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pualsign_tv_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Lv.1"
+                    android:textColor="@color/c_ffffff"
+                    android:textSize="@dimen/tv_24px" />
+
+                <ProgressBar
+                    android:id="@+id/pualsign_bar"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="@dimen/x10"
+                    android:layout_marginRight="@dimen/x10"
+                    android:layout_toLeftOf="@+id/pualsign_tv_to"
+                    android:layout_toRightOf="@+id/pualsign_tv_from"
+                    android:background="@drawable/shape_progressbar"
+                    android:indeterminateDrawable="@android:drawable/progress_indeterminate_horizontal"
+                    android:indeterminateOnly="false"
+                    android:max="100"
+                    android:maxHeight="@dimen/x18"
+                    android:minHeight="@dimen/x18"
+                    android:progress="20"
+                    android:progressDrawable="@drawable/shape_progressbar" />
+
+                <TextView
+                    android:id="@+id/pualsign_tv_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="Lv.2"
+                    android:textColor="@color/c_ffffff"
+                    android:textSize="@dimen/tv_24px" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x129"
+            android:background="@color/c_ffffff"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/pualsign_ll_integral"
+                android:layout_width="@dimen/x0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/mine_signin_jifen"
+                    android:drawablePadding="@dimen/x24"
+                    android:gravity="center"
+                    android:text="积分规则" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/x1"
+                android:layout_height="@dimen/x68"
+                android:layout_gravity="center"
+                android:background="@color/c_f0f0f0" />
+
+            <LinearLayout
+                android:id="@+id/pualsign_ll_grade"
+                android:layout_width="@dimen/x0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/mine_signin_dj"
+                    android:drawablePadding="@dimen/x24"
+                    android:gravity="center"
+                    android:text="等级规则" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/x24"
+            android:background="@color/c_ffffff"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/calendar_previous2"
+                android:layout_width="@dimen/x60"
+                android:layout_height="wrap_content"
+                android:rotation="180"
+                android:src="@mipmap/mine_date_right" />
+
+            <TextView
+                android:id="@+id/tv_calendar_show2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="222"
+                android:textColor="#333333"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/calendar_next2"
+                android:layout_width="@dimen/x60"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/mine_date_right" />
+        </LinearLayout>
+
+        <com.project.dyuapp.mysign.ZWSignCalendarView
+            android:id="@+id/calendarView2"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/c_ffffff"
+            app:calendarTextSize="@dimen/tv_28px"
+            app:isShowLunar="false"
+            app:isShowOtherMonth="false"
+            app:limitFutureMonth="false"
+            app:signColor="@color/c_269ceb"
+            app:signSize="@dimen/x35"
+            app:signTextColor="#FFFFFF"
+            app:todayTextColor="@color/c_333333"
+            app:weekTextColor="@color/c_333333"
+            app:weekTextSize="@dimen/tv_28px">
+
+        </com.project.dyuapp.mysign.ZWSignCalendarView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/c_ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pualsign_tv_signin"
+                android:layout_width="@dimen/x220"
+                android:layout_height="@dimen/x88"
+                android:visibility="visible"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/x48"
+                android:background="@drawable/bg_click_btn_blue"
+                android:gravity="center"
+                android:text="签到"
+                android:textColor="@color/c_ffffff"
+                android:textSize="@dimen/tv_28px" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical"
+    tools:context="com.project.dyuapp.activity.PersonalCenterFishingShopActivity">
+
+    <com.androidkun.xtablayout.XTabLayout
+        android:id="@+id/center_fishing_shop_xTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_ffffff"
+        android:paddingBottom="@dimen/x6"
+        app:xTabIndicatorColor="@color/c_269ceb"
+        app:xTabIndicatorHeight="@dimen/x6"
+        app:xTabIndicatorWidth="@dimen/x40"
+        app:xTabMode="fixed"
+        app:xTabSelectedTextColor="@color/c_269ceb"
+        app:xTabSelectedTextSize="@dimen/tv_32px"
+        app:xTabTextColor="@color/c_333333"
+        app:xTabTextSize="@dimen/tv_32px" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/c_f1f1f1" />
+    <!--可滑动的布局内容-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/center_fishing_shop_vp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_f9f9f9" />
+
+</LinearLayout>

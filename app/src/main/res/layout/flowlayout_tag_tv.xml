@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tag_tv_tv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/x48"
+    android:layout_marginTop="@dimen/x48"
+    android:background="@drawable/bg_white_line_black_round"
+    android:gravity="center"
+    android:paddingBottom="@dimen/x12"
+    android:paddingLeft="@dimen/x24"
+    android:paddingRight="@dimen/x24"
+    android:paddingTop="@dimen/x12"
+    android:text="配饵"
+    android:textColor="@color/c_666666"
+    android:textSize="@dimen/tv_26px" />

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:padding="@dimen/x12"
+        android:id="@+id/item_fishing_friends_img_upload"
+        android:layout_width="@dimen/x218"
+        android:layout_height="@dimen/x218"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/mine_img" />
+
+</LinearLayout>

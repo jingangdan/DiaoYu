@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_white_round_angle"
+        android:layout_marginLeft="@dimen/x72"
+        android:layout_marginRight="@dimen/x72"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="客服"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/x24"
+            android:textColor="@color/c_333333"
+            android:textSize="@dimen/tv_28px"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/x24"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="QQ:"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_28px"/>
+
+            <TextView
+                android:id="@+id/dialog_contact_tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3011288888"
+                android:textColor="@color/c_333333"
+                android:textSize="@dimen/tv_28px"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/dialog_contact_tv_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/x24"
+                android:text="确定"
+                android:textSize="@dimen/tv_28px"
+                android:textColor="@color/c_269ceb"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

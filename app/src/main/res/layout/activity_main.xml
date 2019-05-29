@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/main_fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/main_view_line" />
+
+    <TextView
+        android:id="@+id/main_view_line"
+        style="@style/line"
+        android:layout_above="@+id/main_ll_bottom" />
+
+    <LinearLayout
+        android:id="@+id/main_ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x98"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/main_ll_1"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_iv_1"
+                android:layout_width="@dimen/x44"
+                android:layout_height="@dimen/x44"
+                android:src="@mipmap/tab_home_unselected" />
+
+            <TextView
+                android:id="@+id/main_tv_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x4"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/tv_24px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_ll_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_iv_2"
+                android:layout_width="@dimen/x44"
+                android:layout_height="@dimen/x44"
+                android:src="@mipmap/tab_find_unselected" />
+
+            <TextView
+                android:id="@+id/main_tv_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x4"
+                android:gravity="center"
+                android:text="同城"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/tv_24px" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/main_ll_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_iv_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/x10"
+                android:layout_marginTop="@dimen/x10"
+                android:src="@mipmap/tab_issue" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_ll_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main_iv_4"
+                android:layout_width="@dimen/x44"
+                android:layout_height="@dimen/x44"
+                android:src="@mipmap/tab_forum_unselected" />
+
+            <TextView
+                android:id="@+id/main_tv_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x4"
+                android:gravity="center"
+                android:text="论坛"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/tv_24px" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_ll_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/main_rl_5"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content">
+                <ImageView
+                    android:id="@+id/main_iv_5"
+                    android:layout_width="@dimen/x44"
+                    android:layout_height="@dimen/x44"
+                    android:src="@mipmap/tab_mine_unseleected" />
+                <ImageView
+                    android:id="@+id/main_iv_red_dot"
+                    android:layout_width="@dimen/x21"
+                    android:layout_height="@dimen/x21"
+                    android:layout_alignTop="@id/main_iv_5"
+                   android:layout_alignRight="@+id/main_iv_5"
+                    android:visibility="gone"
+                    android:src="@drawable/red_point"/>
+            </RelativeLayout>
+
+            <!--<ImageView-->
+                <!--android:id="@+id/main_iv_5"-->
+                <!--android:layout_width="@dimen/x44"-->
+                <!--android:layout_height="@dimen/x44"-->
+                <!--android:src="@mipmap/tab_mine_unseleected" />-->
+
+            <TextView
+                android:id="@+id/main_tv_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x4"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/tv_24px" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

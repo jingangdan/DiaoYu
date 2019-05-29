@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f9f9f9"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/other_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x5" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/other_video_fl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/c_f9f9f9">
+
+                <android.support.v7.widget.RecyclerView
+
+                    android:id="@+id/other_video_lv_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/x12"
+                    android:layout_marginRight="@dimen/x98"
+                    android:listSelector="@null"
+                    android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+
+                <LinearLayout
+                    android:id="@+id/other_video_ll_type_up"
+                    android:layout_width="@dimen/x98"
+                    android:layout_height="@dimen/x98"
+                    android:layout_gravity="right"
+                    android:background="@color/c_f9f9f9"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/more_down" />
+                </LinearLayout>
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/c_ffffff"
+                android:padding="@dimen/x12">
+
+                <com.handmark.pulltorefresh.library.PullToRefreshGridView
+                    android:id="@+id/other_video_gv"
+                    android:listSelector="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/c_ffffff"
+                    android:numColumns="2"
+                    android:scrollbars="none"></com.handmark.pulltorefresh.library.PullToRefreshGridView>
+
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/bg_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#a0000000"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+</LinearLayout>

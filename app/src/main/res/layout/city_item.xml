@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/kuang_choose_white"
+        android:clickable="true"
+        android:focusable="false"
+        android:gravity="center"
+        android:padding="@dimen/x15"
+        android:text="北京"
+        android:textColor="@color/c_333333"
+        android:textSize="14sp" />
+
+</LinearLayout>

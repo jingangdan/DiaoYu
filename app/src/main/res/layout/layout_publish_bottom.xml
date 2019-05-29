@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/publish_post_ll_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <TextView style="@style/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x96">
+
+        <TextView
+
+            android:id="@+id/publish_post_tv_save"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/c_ffffff"
+            android:gravity="center"
+            android:text="保存草稿"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/tv_32px" />
+
+        <TextView
+            android:id="@+id/publish_post_tv_publish"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="立即发布"
+            android:textColor="@color/c_ffffff"
+            android:textSize="@dimen/tv_32px" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.project.dyuapp"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 9
+        versionName "1.0.9"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+    /*优酷*/
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    signingConfigs {
+        release {
+            keyAlias 'diaoyu'
+            keyPassword '123456789'
+            storeFile file('../diaoyu.jks')
+            storePassword '123456789'
+        }
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.release
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation project(':pullToRefreshlibrary')
+    implementation project(':imagepicker')
+    implementation files('libs/BaiduLBS_Android.jar')
+    implementation files('libs/SocialSDK_QQ_Simplify.jar')
+    implementation files('libs/umeng_social_net.jar')
+    implementation files('libs/umeng_social_tool.jar')
+    implementation files('libs/umeng_social_api.jar')
+    implementation files('libs/SocialSDK_Sina_Simplify.jar')
+    implementation files('libs/SocialSDK_WeChat_Simplify.jar')
+    implementation files('libs/mma_sdk.jar')
+    implementation files('libs/utdid4all-1.1.5.5.jar')
+    //流式布局
+    implementation project(':lib-zxing')
+    implementation files('libs/jcore-android-1.1.8.jar')
+    //公共库
+    //sdk
+    implementation(name: 'YoukuPlayerOpenSDK-release', ext: 'aar')
+    api 'com.android.support:appcompat-v7:28.0.0'
+    api 'com.android.support:design:28.0.0'
+    api 'com.zhy:okhttputils:2.6.2'
+    api 'com.zhy:autolayout:1.4.5'
+    api 'com.github.franmontiel:PersistentCookieJar:v1.0.0'
+    api 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    api 'com.github.bumptech.glide:glide:3.7.0'
+    api 'com.google.code.gson:gson:2.5'
+    api 'com.jakewharton:butterknife:7.0.0'
+    api 'com.androidkun:XTabLayout:1.1.3'
+    api 'com.hyman:flowlayout-lib:1.1.2'
+    api 'org.greenrobot:eventbus:3.0.0'
+    api 'pl.droidsonroids.gif:android-gif-drawable:1.2.2'
+    api 'pub.devrel:easypermissions:0.2.0'
+    api 'de.hdodenhof:circleimageview:2.2.0'
+    api 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    api 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation files('libs/pinyin4android1.0.jar')
+
+    //列表依赖
+    api 'com.github.jdsjlzx:LRecyclerView:1.5.4.3'
+
+}

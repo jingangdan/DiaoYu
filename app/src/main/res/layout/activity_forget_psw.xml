@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/x24"
+    android:paddingRight="@dimen/x24"
+    android:paddingTop="@dimen/x40"
+    tools:context="com.project.dyuapp.activity.ForgetPswActivity">
+
+    <include layout="@layout/layout_phone_code_psw" />
+
+    <TextView
+        android:id="@+id/forget_psw_tv_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x88"
+        android:layout_marginTop="@dimen/x100"
+        android:text="完成"
+        style="@style/btn_blue" />
+</LinearLayout>

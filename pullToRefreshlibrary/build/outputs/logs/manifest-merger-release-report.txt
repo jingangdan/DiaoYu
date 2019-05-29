@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:2:1-9:12
+INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:2:1-9:12
+INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:2:1-9:12
+INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:2:1-9:12
+INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:2:1-9:12
+INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:2:1-9:12
+INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:2:1-9:12
+	package
+		ADDED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:3:5-49
+		INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml
+		INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml
+	android:versionName
+		ADDED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:5:5-32
+		INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml
+		INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:4:5-31
+		INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml
+		INJECTED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml
+application
+ADDED from E:\project_nn\DiaoYu-master\pullToRefreshlibrary\AndroidManifest.xml:7:5-20

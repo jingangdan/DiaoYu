@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_ffffff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/x24">
+
+        <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
+            android:id="@+id/item_skill_detail_iv_head"
+            android:layout_width="@dimen/x64"
+            android:layout_height="@dimen/x64"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x24"
+            android:src="@mipmap/mine_edit_head"
+            app:layout_auto_basewidth="height"
+            app:siShape="@drawable/shape_circle"
+            app:siSquare="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/item_skill_detail_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="冬钓户外者"
+                    android:textColor="@color/c_333333"
+                    android:textSize="@dimen/tv_28px" />
+
+                <TextView
+                    android:id="@+id/item_skill_detail_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x8"
+                    android:text="2017-11-13 19:00"
+                    android:textColor="@color/c_999999"
+                    android:textSize="@dimen/tv_28px" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/item_skill_detail_tv_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x12"
+                android:text="当时野钓，所处方位较偏"
+                android:textColor="@color/c_666666"
+                android:textSize="@dimen/tv_28px" />
+
+            <LinearLayout
+                android:id="@+id/item_skill_detail_ll_reply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x24"
+                android:background="@color/c_f9f9f9"
+                android:orientation="vertical"
+                android:padding="@dimen/x24">
+
+                <TextView
+                    android:id="@+id/item_skill_detail_tv_name_reply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="阿龙"
+                    android:textColor="@color/c_666666"
+                    android:textSize="@dimen/tv_28px" />
+
+                <TextView
+                    android:id="@+id/item_skill_detail_tv_content_reply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x24"
+                    android:text="不错呦"
+                    android:textColor="@color/c_999999"
+                    android:textSize="@dimen/tv_28px" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="@color/c_f0f0f0" />
+
+
+</LinearLayout>
