@@ -275,8 +275,8 @@ public class SearchAdapter extends RecyclerView.Adapter {
         public void setData(final SearchMessageEntity.DataBeanXX.VideosBean data) {
             if (data.getData() != null && data.getData().size() > 0) {
                 linearLayout.setVisibility(View.VISIBLE);
-                title.setText("相关视频");
-                count.setText("相关视频" + data.getCount() + "条");
+                title.setText("相关商品");
+                count.setText("相关商品" + data.getCount() + "条");
 
                 mAdapter = new SearchVideosAdapter(data.getData(), mContext);
                 recyclerView.setLayoutManager(new LinearLayoutManager(mContext));

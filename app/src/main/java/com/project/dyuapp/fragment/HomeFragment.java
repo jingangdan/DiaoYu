@@ -3,14 +3,22 @@ package com.project.dyuapp.fragment;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,28 +73,47 @@ import com.project.dyuapp.myutils.ToastUtils;
 import com.project.dyuapp.myviews.GridViewForScrollView;
 import com.project.dyuapp.myviews.ListViewForScrollView;
 import com.project.dyuapp.shop.CateActivity;
+import com.project.dyuapp.shop.CateGoodsAdapter;
+import com.project.dyuapp.shop.GoodsActivity;
+import com.project.dyuapp.shop.GoodsData;
+import com.project.dyuapp.shop.GoodsDetailActivity;
+import com.project.dyuapp.shop.GsonUtils;
+import com.project.dyuapp.shop.OnItemClickListener;
+import com.project.dyuapp.shop.PermissionUtils;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
+import okio.Buffer;
+import okio.BufferedSource;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.AppSettingsDialog;
 import pub.devrel.easypermissions.EasyPermissions;
 
+import static com.alibaba.fastjson.util.IOUtils.UTF8;
 import static com.project.dyuapp.myutils.PublicStaticData.CITY_CHANGE_CODE;
 import static com.project.dyuapp.myutils.PublicStaticData.HOME_CODE;
-
 
 /**
  * @describe：首页
  * @author：刘晓丽
  * @createdate：2017/8/18 11:00
  */
-
 public class HomeFragment extends MyBaseFragment implements EasyPermissions.PermissionCallbacks {
 
     @Bind(R.id.home_tv_area)
@@ -152,6 +179,11 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
     @Bind(R.id.home_lv_gg)
     ListViewForScrollView homeLvGg;
 
+    @Bind(R.id.rv_cate_recommend)
+    RecyclerView rvCateRecommend;
+    @Bind(R.id.relCate)
+    RelativeLayout relCate;
+
     private GVAdapter1 gvAdapter1;
     private GVAdapter2 gvAdapter2;
 
@@ -170,29 +202,53 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
     private double latitude;
     private double longitude;
 
+    //多个权限
+    private final String[] PERMISSIONS = new String[]{
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.CAMERA
+    };
+
+    private final int REQUEST_CODE_PERMISSIONS = 0x01;
+
+    private CateGoodsAdapter cateGoodsAdapter;
+    private LinearLayoutManager mManager2;
+    private String price = "";
+    DecimalFormat df;
+
+    @SuppressLint("HandlerLeak")
+    private Handler mHandler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case 0x05:
+                    Bundle bundle = msg.getData();
+                    String date = bundle.getString("msg");
+                    Log.e("ssssss", "date=" + date);
+                    if (!TextUtils.isEmpty(date)) {
+                        GoodsData data = GsonUtils.gsonIntance().gsonToBean(date, GoodsData.class);
+                        if (data.getCode() == 0) {
+                            cateGoodsAdapter.clear();
+                            cateGoodsAdapter.addAll(data.getData().getGoods_list());
+                        }
+                    }
+                    break;
+            }
+        }
+    };
+
     @SuppressLint("ApplySharedPref")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, null);
         ButterKnife.bind(this, view);
+
+        df = new DecimalFormat("0.00");
         initData();
-        initPermission();
+        //initPermission();
 
         if (TextUtils.isEmpty(SPUtils.getPreference(getActivity(), "homeCity"))) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {// 没有权限。
-//                    if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)) {
-//                        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-//                    } else {
-//                        // 申请授权。
-//                        ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-//                    }
-//                } else {
-//                    initLocation();
-//                }
-//            }else{
-//                initLocation();
-//            }
             initLocation();
         } else {
             homeTvArea.setText(SPUtils.getPreference(getActivity(), "homeCity"));
@@ -298,12 +354,12 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
         });
         //中间10个分类
         gvAdapter2 = new GVAdapter2(new ArrayList<FenLei>() {{
-            add(new FenLei(R.mipmap.home_icon_01, "技巧"));
-            add(new FenLei(R.mipmap.home_icon_02, "视频"));
+            add(new FenLei(R.mipmap.home_icon_01, "钓鱼技巧"));
+            add(new FenLei(R.mipmap.home_icon_02, "金币兑换"));
             // add(new FenLei(R.mipmap.home_icon_03, "钓鱼杂谈"));
             add(new FenLei(R.mipmap.home_icon_04, "问答"));
-            add(new FenLei(R.mipmap.home_icon_05, "路亚"));
-            add(new FenLei(R.mipmap.home_icon_06, "饵料"));
+            add(new FenLei(R.mipmap.home_icon_05, "路亚海钓"));
+            add(new FenLei(R.mipmap.home_icon_06, "饵料配方"));
             // add(new FenLei(R.mipmap.home_icon_07, "渔具DIY"));
             // add(new FenLei(R.mipmap.home_icon_08, "渔具店"));
             //  add(new FenLei(R.mipmap.home_icon_09, "商城"));
@@ -379,6 +435,32 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
             }
         });
 
+        //商品推荐
+        mManager2 = new LinearLayoutManager(getActivity());
+        mManager2.setOrientation(LinearLayoutManager.HORIZONTAL);
+        rvCateRecommend.setLayoutManager(mManager2);
+        cateGoodsAdapter = new CateGoodsAdapter(getActivity());
+        rvCateRecommend.setAdapter(cateGoodsAdapter);
+        cateGoodsAdapter.setmOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                if (cateGoodsAdapter.getDataList().get(position).isHas_coupon()) {
+                    price = df.format(((Integer.valueOf(cateGoodsAdapter.getDataList().get(position).getMin_group_price())
+                            -
+                            Integer.valueOf(cateGoodsAdapter.getDataList().get(position).getCoupon_discount())))
+                            / 100);
+                } else {
+                    price = df.format(Integer.valueOf(cateGoodsAdapter.getDataList().get(position).getMin_group_price()) / 100);
+                }
+
+                startActivity(new Intent(getActivity(), GoodsDetailActivity.class)
+                        .putExtra("goods_id", cateGoodsAdapter.getDataList().get(position).getGoods_id())
+                        .putExtra("price", price)
+                        .putExtra("module", "recommend")
+                );
+            }
+        });
+
         //下方帖子分类列表
         mFragments = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
@@ -393,6 +475,7 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
                 //刷新
                 //getNotice();
                 getWeather();
+                getRecommendData();
                 ((HomePostFragment) mFragments.get(index)).refresh(index, true, refreshView);
             }
 
@@ -403,6 +486,54 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
             }
         });
         // getWeather();//设置天气
+
+        getRecommendData();//获取推荐商品
+    }
+
+    /**
+     * 获取推荐数据
+     */
+    public void getRecommendData() {
+        OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
+        FormBody.Builder formBody = new FormBody.Builder();//创建表单请求体
+        formBody.add("a", "recommend");
+        formBody.add("page", "1");//传递键值对参数
+        formBody.add("pagesize", "9");
+        Request request = new Request.Builder()//创建Request 对象。
+                .url(HttpUrl.shop_goods_list)
+                .post(formBody.build())//传递请求体
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                ResponseBody responseBody = response.body();
+                BufferedSource source = responseBody.source();
+                source.request(Long.MAX_VALUE); // Buffer the entire body.
+                Buffer buffer = source.buffer();
+                Charset charset = UTF8;
+                MediaType contentType = responseBody.contentType();
+                if (contentType != null) {
+                    charset = contentType.charset(UTF8);
+                }
+
+                String bodyString = buffer.clone().readString(charset);
+
+                //传递的数据
+                Bundle bundle = new Bundle();
+                bundle.putString("msg", bodyString);
+                //发送数据
+                Message message = Message.obtain();
+                message.setData(bundle);   //message.obj=bundle  传值也行
+                message.what = 0x05;
+                mHandler.sendMessage(message);
+
+            }
+        });
     }
 
     //跳转PostList帖子列表
@@ -641,7 +772,7 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
         ButterKnife.unbind(this);
     }
 
-    @OnClick({R.id.home_tv_area, R.id.home_ll_search, R.id.home_ll_weather})
+    @OnClick({R.id.home_tv_area, R.id.home_ll_search, R.id.home_ll_weather, R.id.relCate})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.home_tv_area:
@@ -658,6 +789,15 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
                 //天气
                 Intent intent = new Intent(getActivity(), WeatherActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.relCate:
+                //精品推荐
+                startActivity(new Intent(getActivity(), GoodsActivity.class)
+                        .putExtra("a", "recommend")
+                        .putExtra("cate_id", "")
+                        .putExtra("keyword", "")
+                        .putExtra("tag", 2)
+                );
                 break;
         }
     }
@@ -805,7 +945,8 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
         option.setEnableSimulateGps(false);//可选，默认false，设置是否需要过滤gps仿真结果，默认需要
         mLocationClient.setLocOption(option);
         //开始定位
-        locationTask();
+        //locationTask();
+        requestMorePermissions();
         LocationManager locManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         if (!locManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             // 未打开位置开关，可能导致定位失败或定位不准，提示用户或做相应处理
@@ -855,38 +996,114 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
         if (permissions.length == 0) {
             //权限都申请了
             //是否登录
+            Log.e("ssssss", "权限都申请了");
         } else {
             //申请权限
+            Log.e("ssssss", "申请权限");
             ActivityCompat.requestPermissions(getActivity(), permissions, 100);
         }
     }
 
-    /**
-     * EsayPermissions接管权限处理逻辑
-     *
-     * @param requestCode
-     * @param permissions
-     * @param grantResults
-     */
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        mLocationClient.restart();
-        // Forward results to EasyPermissions
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-
-        switch (requestCode) {
-            case 1: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // 权限被用户同意。
-                    initLocation();
-                } else {
-                    // 权限被用户拒绝了。
-                    ToastUtils.getInstance(getActivity()).showMessage("定位权限被禁止");
-                }
+    // 普通申请多个权限
+    private void requestMorePermissions() {
+        if (Build.VERSION.SDK_INT >= 23
+                && getActivity().getApplicationInfo().targetSdkVersion >= 23) {
+            PermissionUtils.checkAndRequestMorePermissions(getActivity(),
+                    PERMISSIONS,
+                    REQUEST_CODE_PERMISSIONS,
+                    new PermissionUtils.PermissionRequestSuccessCallBack() {
+                        @Override
+                        public void onHasPermission() {
+                            // 权限已被授予
+                            if (mLocationClient != null) {
+                                mLocationClient.start();
+                            }
+                        }
+                    });
+        } else {
+            if (mLocationClient != null) {
+                mLocationClient.start();
             }
         }
     }
+
+    /**
+     * 显示前往应用设置Dialog
+     */
+    private void showToAppSettingDialog() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle("需要权限")
+                .setMessage("我们需要相关权限，才能实现功能，点击前往，将转到应用的设置界面，请开启应用的相关权限。")
+                .setPositiveButton("前往", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        PermissionUtils.toAppSetting(getActivity());
+                    }
+                })
+                .setNegativeButton("取消", null).show();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CODE_PERMISSIONS:
+                PermissionUtils.onRequestMorePermissionsResult(getActivity(),
+                        PERMISSIONS,
+                        new PermissionUtils.PermissionCheckCallBack() {
+                            @Override
+                            public void onHasPermission() {
+                                if (mLocationClient != null) {
+                                    mLocationClient.start();
+                                }
+                            }
+
+                            @Override
+                            public void onUserHasAlreadyTurnedDown(String... permission) {
+                                ToastUtils.getInstance(getActivity()).
+                                        showMessage("我们需要" + Arrays.toString(permission) + "权限");
+                            }
+
+                            @Override
+                            public void onUserHasAlreadyTurnedDownAndDontAsk(String... permission) {
+                                ToastUtils.getInstance(getActivity()).
+                                        showMessage("我们需要" + Arrays.toString(permission) + "权限");
+                                showToAppSettingDialog();
+                            }
+                        });
+
+
+        }
+    }
+
+//    /**
+//     * EsayPermissions接管权限处理逻辑
+//     *
+//     * @param requestCode
+//     * @param permissions
+//     * @param grantResults
+//     */
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        Log.e("ssssss", "接管权限处理");
+//        mLocationClient.restart();
+//        // Forward results to EasyPermissions
+//        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+//        switch (requestCode) {
+//            case 1:
+//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    // 权限被用户同意。
+//                    initLocation();
+//                } else {
+//                    // 权限被用户拒绝了。
+//                    ToastUtils.getInstance(getActivity()).showMessage("定位权限被禁止");
+//                }
+//                break;
+//            case 100:
+//                Log.e("ssssss", "这是啥啊");
+//                break;
+//        }
+//    }
 
     @AfterPermissionGranted(PublicStaticData.REQUEST_LOCATION_PERM)
     public void locationTask() {

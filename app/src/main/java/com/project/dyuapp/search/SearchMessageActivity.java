@@ -41,7 +41,7 @@ public class SearchMessageActivity extends MyBaseActivity implements SearchInter
     ViewPager searchMessageVp;
 
     /*综合 钓场 渔具店 视频 帖子*/
-    private String[] titles = new String[]{"综合", "视频", "帖子", "钓场", "渔具店"};
+    private String[] titles = new String[]{"综合", "商品", "帖子", "钓场", "渔具店"};
 
     private List<Fragment> mFragments;
     // private HomeVideoFragment mFragment;
@@ -104,7 +104,7 @@ public class SearchMessageActivity extends MyBaseActivity implements SearchInter
             } else {
                 mOtherFragment = new OtherSearchFragment();//其他
                 if (i == 1) {
-                    type = "视频";
+                    type = "商品";
                 }
                 if (i == 2) {
                     type = "帖子";
