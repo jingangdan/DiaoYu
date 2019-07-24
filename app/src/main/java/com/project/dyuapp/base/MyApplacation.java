@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Environment;
+import android.util.Log;
 import android.view.WindowManager;
 
 import com.baidu.mapapi.SDKInitializer;
@@ -39,13 +40,14 @@ public class MyApplacation extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Log.e("ssssss", "走");
         //百度地图
         SDKInitializer.initialize(getApplicationContext());
         //极光推送
         JPushInterface.setDebugMode(true);
         JPushInterface.init(this);
         //优酷视频
-        YoukuPlayerConfig.setClientIdAndSecret("25b1adbc8bff2e78","f71e3e65611e496f65675f976beee3c1");
+        YoukuPlayerConfig.setClientIdAndSecret("25b1adbc8bff2e78", "f71e3e65611e496f65675f976beee3c1");
         YoukuPlayerConfig.onInitial(this);
         YoukuPlayerConfig.setLog(false);
 

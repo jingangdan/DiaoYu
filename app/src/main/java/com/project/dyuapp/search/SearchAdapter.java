@@ -16,7 +16,11 @@ import com.project.dyuapp.activity.FishingPlaceDetailsActivity;
 import com.project.dyuapp.activity.FishingShopDetailsActivity;
 import com.project.dyuapp.activity.SkillDetailsActivity;
 import com.project.dyuapp.activity.VideoDetailsActivity;
+import com.project.dyuapp.shop.GoodsActivity;
+import com.project.dyuapp.shop.GoodsDetailActivity;
+import com.project.dyuapp.shop.SearchGoodsAdapter;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -87,6 +91,7 @@ public class SearchAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if (viewType == TYPE_SEARCG) {
+//            return new VideosViewHolder(mContext, mLayoutInflater.inflate(R.layout.item_search_synthsize, parent, false));
             return new VideosViewHolder(mContext, mLayoutInflater.inflate(R.layout.item_search_synthsize, parent, false));
         } else if (viewType == TYPE_BANNER) {
             return new ForumViewHolder(mContext, mLayoutInflater.inflate(R.layout.item_search_synthsize, parent, false));
@@ -108,7 +113,7 @@ public class SearchAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (getItemViewType(position) == TYPE_SEARCG) {
             VideosViewHolder menuViewHolder = (VideosViewHolder) holder;
-            menuViewHolder.setData(dataList.get(0).getVideos());
+            menuViewHolder.setData(dataList.get(0).getGoods());
         } else if (getItemViewType(position) == TYPE_BANNER) {
             ForumViewHolder imgListViewHolder = (ForumViewHolder) holder;
             imgListViewHolder.setData(dataList.get(0).getForum());
@@ -260,7 +265,11 @@ public class SearchAdapter extends RecyclerView.Adapter {
         private final Context mContext;
         private RecyclerView recyclerView;
         private TextView title, count;
-        private SearchVideosAdapter mAdapter;
+        //        private SearchVideosAdapter mAdapter;
+        private SearchGoodsAdapter mAdapter;
+
+        DecimalFormat df;
+        private String price = "", module = "";
 
         public VideosViewHolder(Context mContext, View itemView) {
             super(itemView);
@@ -270,22 +279,39 @@ public class SearchAdapter extends RecyclerView.Adapter {
             title = (TextView) itemView.findViewById(R.id.tv_item_search_synthsize);
             count = (TextView) itemView.findViewById(R.id.tv_item_search_synthsize_size);
 
+            df = new DecimalFormat("0.00");
         }
 
-        public void setData(final SearchMessageEntity.DataBeanXX.VideosBean data) {
+        public void setData(final SearchMessageEntity.DataBeanXX.GoodsBean data) {
             if (data.getData() != null && data.getData().size() > 0) {
                 linearLayout.setVisibility(View.VISIBLE);
                 title.setText("相关商品");
                 count.setText("相关商品" + data.getCount() + "条");
 
-                mAdapter = new SearchVideosAdapter(data.getData(), mContext);
+                // mAdapter = new SearchVideosAdapter(data.getData(), mContext);
+                mAdapter = new SearchGoodsAdapter(data.getData(), mContext);
                 recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
                 recyclerView.setAdapter(mAdapter);
 
                 mAdapter.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
-                        mContext.startActivity(new Intent(mContext, VideoDetailsActivity.class).putExtra("article_id", data.getData().get(position).getArticle_id()));
+                        //跳转到商品列表
+                        // mContext.startActivity(new Intent(mContext, VideoDetailsActivity.class).putExtra("article_id", data.getData().get(position).getArticle_id()));
+                        if (data.getData().get(position).isHas_coupon()) {
+                            price = df.format(((Integer.valueOf(data.getData().get(position).getMin_group_price())
+                                    -
+                                    Integer.valueOf(data.getData().get(position).getCoupon_discount())))
+                                    / 100);
+                        } else {
+                            price = df.format(Integer.valueOf(data.getData().get(position).getMin_group_price()) / 100);
+                        }
+                        mContext.startActivity(new Intent(mContext, GoodsDetailActivity.class)
+                                .putExtra("goods_id", data.getData().get(position).getGoods_id())
+                                .putExtra("price", price)
+                                .putExtra("module", "recommend")
+                        );
+
                     }
                 });
 

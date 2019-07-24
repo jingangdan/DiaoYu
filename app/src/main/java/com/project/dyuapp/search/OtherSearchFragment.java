@@ -119,11 +119,13 @@ public class OtherSearchFragment extends LazyBaseFragment {
             object_id = "2";
             adapterShop = new HomeFishingShopAdapter(data2, getActivity(), "SearchResultActivity");
             plv.setAdapter(adapterShop);
-        } else if (type.equals("商品")) {
-            object_id = "3";
-            adapterVideo = new VideoAdapter(data3, getActivity());
-            plv.setAdapter(adapterVideo);
-        } else if (type.equals("帖子")) {
+        }
+//        else if (type.equals("商品")) {
+//            object_id = "6";
+//            adapterVideo = new VideoAdapter(data3, getActivity());
+//            plv.setAdapter(adapterVideo);
+//        }
+        else if (type.equals("帖子")) {
             object_id = "4";
             adapterPost = new PostListAdapter(data4, getActivity());
             plv.setAdapter(adapterPost);
@@ -139,9 +141,11 @@ public class OtherSearchFragment extends LazyBaseFragment {
                     startActivity(new Intent(getActivity(), FishingShopDetailsActivity.class).putExtra("lat", data2.get(position - 1).getLatitude())
                             .putExtra("lon", data2.get(position - 1).getLongitude()).putExtra("id", data2.get(position - 1).getFishing_shop_id())
                             .putExtra("cityid", data2.get(position - 1).getCityid()));
-                } else if (type.equals("商品")) {
-                    startActivity(new Intent(getActivity(), VideoDetailsActivity.class).putExtra("article_id", data3.get(position - 1).getArticle_id()));
-                } else if (type.equals("帖子")) {
+                }
+//                else if (type.equals("商品")) {
+//                    startActivity(new Intent(getActivity(), VideoDetailsActivity.class).putExtra("article_id", data3.get(position - 1).getArticle_id()));
+//                }
+                else if (type.equals("帖子")) {
                     startActivity(new Intent(getActivity(), SkillDetailsActivity.class).putExtra("id", data4.get(position - 1).getF_id()));
                 }
             }
@@ -181,9 +185,11 @@ public class OtherSearchFragment extends LazyBaseFragment {
             commonOkhttp.putCallback(dcCallBack());
         } else if (object_id.equals("2")) {
             commonOkhttp.putCallback(yjdCallBack());
-        } else if (object_id.equals("3")) {
-            commonOkhttp.putCallback(spCallBack());
-        } else if (object_id.equals("4")) {
+        }
+//        else if (object_id.equals("6")) {
+//            commonOkhttp.putCallback(spCallBack());
+//        }
+        else if (object_id.equals("4")) {
             commonOkhttp.putCallback(tzCallBack());
         }
         commonOkhttp.Execute();
@@ -362,7 +368,7 @@ public class OtherSearchFragment extends LazyBaseFragment {
         final List<String> list = new ArrayList<>();
         list.add("钓场");
         list.add("渔具店");
-        list.add("商品");
+        //list.add("商品");
         list.add("帖子");
         listView.setAdapter(new CommonAdapter<String>(getActivity(), list, R.layout.item_lv_tv) {
             @Override

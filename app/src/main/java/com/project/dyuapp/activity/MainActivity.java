@@ -316,26 +316,26 @@ public class MainActivity extends MyBaseActivity {
                     Log.e("sssssssssss", "ok");
                 } else {
                     Log.e("sssssssssss", "data = " + data.getLoad_url());
-                   // showDialog(APKVersionCodeUtils.getVerName(MainActivity.this), data.getVersion(), data.getUpinfo(), data.getLoad_url());
+                    // showDialog(APKVersionCodeUtils.getVerName(MainActivity.this), data.getVersion(), data.getUpinfo(), data.getLoad_url());
 
                     DialogUtils.showDialog(MainActivity.this,
                             "发现新版本",
-                            "当前版本："+APKVersionCodeUtils.getVerName(MainActivity.this)+"\n"+
-                            "最新版本："+data.getVersion()+"\n"+"更新内容："+data.getUpinfo(),
+                            "当前版本：" + APKVersionCodeUtils.getVerName(MainActivity.this) + "\n" +
+                                    "最新版本：" + data.getVersion() + "\n" + "更新内容：" + data.getUpinfo(),
                             new DialogUtils.OnDialogListener() {
-                        @Override
-                        public void confirm() {
-                            ApkUpdateUtils.download(MainActivity.this, "http://www.diaoyu8.com" + data.getLoad_url(), getResources().getString(R.string.app_name));
-                        }
+                                @Override
+                                public void confirm() {
+                                    ApkUpdateUtils.download(MainActivity.this, "http://www.diaoyu8.com" + data.getLoad_url(), getResources().getString(R.string.app_name));
+                                }
 
-                        @Override
-                        public void cancel() {
+                                @Override
+                                public void cancel() {
 
-                        }
-                    });
+                                }
+                            });
                 }
 
-               // String versionName = APKVersionCodeUtils.getVerName(MainActivity.this);
+                // String versionName = APKVersionCodeUtils.getVerName(MainActivity.this);
             }
         });
         commonOkhttp.Execute();
@@ -358,7 +358,7 @@ public class MainActivity extends MyBaseActivity {
         TextView tvUpdateTile = (TextView) view.findViewById(R.id.tv_update_title);
         final TextView tvUpdateMsgSize = (TextView) view.findViewById(R.id.tv_update_msg_size);
 
-        tvContent.setText("更新内容："+content);//更新内容
+        tvContent.setText("更新内容：" + content);//更新内容
         tvUpdateTile.setText("当前版本：" + nowVersion);
         tvUpdateMsgSize.setText("新版本：" + newVersion);
 

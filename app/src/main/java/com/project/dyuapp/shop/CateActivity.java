@@ -266,6 +266,7 @@ public class CateActivity extends MyBaseActivity {
                         .putExtra("keyword", etCate.getText().toString().trim())
                         .putExtra("tag", 1)
                 );
+                etCate.setText("");
                 break;
             case R.id.relCate:
                 //精品推荐

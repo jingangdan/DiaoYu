@@ -12,10 +12,10 @@
         android:padding="@dimen/x24">
 
         <ImageView
-            android:scrollbars="none"
             android:id="@+id/video_iv_img"
             android:layout_width="@dimen/x160"
             android:layout_height="@dimen/x120"
+            android:scrollbars="none"
             android:src="@mipmap/mine_img" />
 
         <LinearLayout
@@ -40,8 +40,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/x8"
                 android:text=""
-                android:textColor="@color/c_999999"
-                android:textSize="@dimen/tv_26px" />
+                android:textColor="#FF2828"
+                android:textSize="14dp" />
 
         </LinearLayout>
 

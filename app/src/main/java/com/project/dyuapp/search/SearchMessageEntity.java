@@ -4,6 +4,8 @@ import com.project.dyuapp.entity.FishingGearEntity;
 import com.project.dyuapp.entity.ForumEntity;
 import com.project.dyuapp.entity.HomeFishingPlaceEntity;
 import com.project.dyuapp.entity.VideoListBean;
+import com.project.dyuapp.shop.GoodsData;
+import com.project.dyuapp.shop.GoodsEntity;
 
 import java.util.List;
 
@@ -59,6 +61,7 @@ public class SearchMessageEntity {
         private FishingShopBean fishing_shop;
         private VideosBean videos;
         private ForumBean forum;
+        private GoodsBean goods;
 
         public FishingGroundsBean getFishing_grounds() {
             return fishing_grounds;
@@ -82,6 +85,14 @@ public class SearchMessageEntity {
 
         public void setVideos(VideosBean videos) {
             this.videos = videos;
+        }
+
+        public GoodsBean getGoods() {
+            return goods;
+        }
+
+        public void setGoods(GoodsBean goods) {
+            this.goods = goods;
         }
 
         public ForumBean getForum() {
@@ -196,6 +207,27 @@ public class SearchMessageEntity {
                 this.data = data;
             }
 
+        }
+
+        public static class GoodsBean {
+            private String count;
+            private List<GoodsEntity> data;
+
+            public String getCount() {
+                return count;
+            }
+
+            public void setCount(String count) {
+                this.count = count;
+            }
+
+            public List<GoodsEntity> getData() {
+                return data;
+            }
+
+            public void setData(List<GoodsEntity> data) {
+                this.data = data;
+            }
         }
     }
 }

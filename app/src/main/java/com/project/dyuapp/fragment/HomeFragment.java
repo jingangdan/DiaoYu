@@ -376,7 +376,14 @@ public class HomeFragment extends MyBaseFragment implements EasyPermissions.Perm
                         break;
                     case 1:
                         //视频
-                        startActivity(new Intent(getActivity(), HomeVideoActivity.class));
+//                        startActivity(new Intent(getActivity(), HomeVideoActivity.class));
+                       // startActivity(new Intent(getActivity(), GoldMallActivity.class));
+                        if (!TextUtils.isEmpty(SPUtils.getPreference(getActivity(), "userid"))) {
+                            startActivity(new Intent(getActivity(), GoldMallActivity.class));
+                        } else {
+                            startActivity(new Intent(getActivity(), LoginActivity.class));
+                        }
+
                         break;
                     case 2:
                         //钓鱼杂谈

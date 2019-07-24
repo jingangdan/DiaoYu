@@ -46,6 +46,7 @@ public class SearchMessageActivity extends MyBaseActivity implements SearchInter
     private List<Fragment> mFragments;
     // private HomeVideoFragment mFragment;
     private SynthesizSearchFragment mFragment;
+    private GoodsFragment goodsFragment;
     private OtherSearchFragment mOtherFragment;
     private CommonPagerAdapter mAdapter;
 
@@ -101,11 +102,19 @@ public class SearchMessageActivity extends MyBaseActivity implements SearchInter
                 mFragments.add(mFragment);
                 mFragment.setSearchInterface(this);
 
+            } else if (i == 1) {
+                type = "商品";
+                goodsFragment = new GoodsFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("type", type);
+                bundle.putString("keyWords", keyWords);
+                bundle.putString("lat", lat);
+                bundle.putString("lng", lng);
+                goodsFragment.setArguments(bundle);
+                mFragments.add(goodsFragment);
+
             } else {
                 mOtherFragment = new OtherSearchFragment();//其他
-                if (i == 1) {
-                    type = "商品";
-                }
                 if (i == 2) {
                     type = "帖子";
                 }
