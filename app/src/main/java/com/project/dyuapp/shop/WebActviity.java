@@ -14,6 +14,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.project.dyuapp.R;
 import com.project.dyuapp.base.MyBaseActivity;
 
@@ -31,6 +34,8 @@ import butterknife.ButterKnife;
 public class WebActviity extends MyBaseActivity {
     @Bind(R.id.web_frame)
     FrameLayout webFrame;
+    @Bind(R.id.adView)
+    AdView adView;
     //    @Bind(R.id.webView)
     WebView webView;
 
@@ -107,6 +112,18 @@ public class WebActviity extends MyBaseActivity {
         });
         webFrame.addView(webView);
         webView.loadUrl(wcUrl, extraHeaders);
+        setAd();
+    }
 
+    public void setAd() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(int i) {
+            }
+        });
+        adView.loadAd(adRequest);
     }
 }

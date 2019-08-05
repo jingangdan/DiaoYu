@@ -13,6 +13,7 @@ import com.franmontiel.persistentcookiejar.ClearableCookieJar;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
+import com.google.android.gms.ads.MobileAds;
 import com.project.dyuapp.myutils.PublicStaticData;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
@@ -90,6 +91,8 @@ public class MyApplacation extends Application {
 
         //二维码扫描
         ZXingLibrary.initDisplayOpinion(this);
+
+        MobileAds.initialize(this, "ca-app-pub-9843411715507427/3341064815");
     }
 
     //验证各种导航地图是否安装

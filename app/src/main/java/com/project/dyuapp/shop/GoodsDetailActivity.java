@@ -1,13 +1,17 @@
 package com.project.dyuapp.shop;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
@@ -23,12 +27,16 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.project.dyuapp.R;
 import com.project.dyuapp.base.MyBaseActivity;
 import com.project.dyuapp.myutils.HttpUrl;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -65,6 +73,7 @@ public class GoodsDetailActivity extends MyBaseActivity {
     private String goods_id = "", price = "";
     private String module = "";
     private String wcUrl = "";
+    private String url = "";
 
     @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
@@ -76,7 +85,8 @@ public class GoodsDetailActivity extends MyBaseActivity {
                     if (!TextUtils.isEmpty(date)) {
                         GoodsDetailData data = GsonUtils.gsonIntance().gsonToBean(date, GoodsDetailData.class);
                         if (data.getCode() == 0) {
-                            wcUrl = data.getMessage().get_$0().getWe_app_web_view_url();
+                            wcUrl = data.getMessage().get_$0().getMobile_short_url();
+                            url = data.getMessage().get_$0().getUrl();
 //                            data.getMessage().get_$0().getWeibo_app_web_view_short_url();
                         }
                     }
@@ -93,6 +103,7 @@ public class GoodsDetailActivity extends MyBaseActivity {
 
         initTitle();
         initData();
+        checkAppInstalled(this, "com.xunmeng.pinduoduo");
     }
 
     public void initTitle() {
@@ -204,6 +215,7 @@ public class GoodsDetailActivity extends MyBaseActivity {
 //            }
 //
 //        });
+
     }
 
     @OnClick({R.id.lin1, R.id.lin2, R.id.lin3})
@@ -218,19 +230,34 @@ public class GoodsDetailActivity extends MyBaseActivity {
                     showMessage("无推广链接");
                     return;
                 }
-//                https://mobile.yangkeduo.com/duo_coupon_landing.html?goods_id=8732290862&pid=1763821_66044416&cpsSign=CC_190523_1763821_66044416_6f99fbe1e8bf62ea48d78afee7f8318f&duoduo_type=3&launch_wx=1
-//                Intent intent = new Intent();
-//                intent.setAction("android.intent.action.VIEW");
-//                Uri content_url = Uri.parse(wcUrl);
-//                intent.setData(content_url);
-//                startActivity(intent);
-
-                startActivity(new Intent(this, WebActviity.class)
-                        .putExtra("wcUrl", wcUrl));
-
+                if (checkAppInstalled(this, "com.xunmeng.pinduoduo")) {
+                    String userIdJiequ = url.substring(url.indexOf("duo_coupon_landing"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("pinduoduo://com.xunmeng.pinduoduo/" + userIdJiequ));
+                    startActivity(intent);
+                } else {
+                    startActivity(new Intent(this, WebActviity.class)
+                            .putExtra("wcUrl", wcUrl));
+                }
                 break;
         }
     }
+
+    private boolean checkAppInstalled(Context context, String pkgName) {
+        if (pkgName == null || pkgName.isEmpty()) {
+            return false;
+        }
+        final PackageManager packageManager = context.getPackageManager();
+        List<PackageInfo> info = packageManager.getInstalledPackages(0);
+        if (info == null || info.isEmpty())
+            return false;
+        for (int i = 0; i < info.size(); i++) {
+            if (pkgName.equals(info.get(i).packageName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     private class WebChromeClientProgress extends WebChromeClient {
         @Override
